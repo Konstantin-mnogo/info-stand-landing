@@ -64,7 +64,33 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
-      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-secondary via-secondary/95 to-primary/20 text-white overflow-hidden">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
+        <div className="container mx-auto px-6 py-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <img 
+                src="https://cdn.poehali.dev/projects/c7034d56-1650-47d4-8d52-409af5db3144/files/152a12a8-09aa-4e32-8d62-029f15144f95.jpg" 
+                alt="МногоСтендов.рф"
+                className="h-12 w-12 object-contain"
+              />
+              <span className="font-heading text-xl font-bold text-secondary">многостендов.рф</span>
+            </div>
+            <nav className="hidden md:flex items-center gap-8">
+              <a href="#products" className="text-secondary hover:text-primary transition-colors">Продукция</a>
+              <a href="#advantages" className="text-secondary hover:text-primary transition-colors">Преимущества</a>
+              <a href="#contacts" className="text-secondary hover:text-primary transition-colors">Контакты</a>
+              <Button 
+                size="sm"
+                onClick={() => document.getElementById('order')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                Заказать
+              </Button>
+            </nav>
+          </div>
+        </div>
+      </header>
+
+      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-secondary via-secondary/95 to-primary/20 text-white overflow-hidden pt-20">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS1vcGFjaXR5PSIwLjA1IiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-40"></div>
         
         <div className="container mx-auto px-6 relative z-10 text-center animate-fade-in">
