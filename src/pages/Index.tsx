@@ -68,10 +68,11 @@ const Index = () => {
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="h-12 w-12 rounded-lg bg-primary flex items-center justify-center">
-                <Icon name="LayoutGrid" size={28} className="text-white" />
-              </div>
-              <span className="font-heading text-xl font-bold text-secondary">многостендов.рф</span>
+              <img 
+                src="https://cdn.poehali.dev/projects/c7034d56-1650-47d4-8d52-409af5db3144/files/570bba42-1ce0-4008-a588-0ea5104c0443.jpg" 
+                alt="МногоСтендов.рф"
+                className="h-12 object-contain"
+              />
             </div>
             <nav className="hidden md:flex items-center gap-8">
               <a href="#products" className="text-secondary hover:text-primary transition-colors">Продукция</a>
@@ -88,7 +89,7 @@ const Index = () => {
         </div>
       </header>
 
-      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-secondary via-secondary/95 to-primary/20 text-white overflow-hidden pt-20">
+      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-secondary via-secondary/95 to-primary/10 text-white overflow-hidden pt-20">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS1vcGFjaXR5PSIwLjA1IiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-40"></div>
         
         <div className="container mx-auto px-6 relative z-10 text-center animate-fade-in">
