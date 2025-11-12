@@ -28,9 +28,15 @@ const Index = () => {
     },
     {
       id: 3,
-      title: 'Уличные конструкции',
-      description: 'Прочные и долговечные. Устойчивы к погодным условиям.',
-      image: 'https://cdn.poehali.dev/projects/c7034d56-1650-47d4-8d52-409af5db3144/files/893eaf40-7cd2-4730-a014-0ecb391444ac.jpg'
+      title: 'Стенды с подсветкой',
+      description: 'Современные стенды со встроенной LED-подсветкой для максимальной видимости.',
+      image: 'https://cdn.poehali.dev/projects/c7034d56-1650-47d4-8d52-409af5db3144/files/91e63211-9634-40b2-9b42-24da5ad3cc73.jpg'
+    },
+    {
+      id: 4,
+      title: 'Стенды из акрила',
+      description: 'Прозрачные конструкции из оргстекла. Стильное решение для современных офисов.',
+      image: 'https://cdn.poehali.dev/projects/c7034d56-1650-47d4-8d52-409af5db3144/files/16ff6fff-8e9d-47e5-9bab-832b71691338.jpg'
     }
   ];
 
@@ -119,7 +125,7 @@ const Index = () => {
             Широкий выбор решений для любых задач
           </p>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {products.map((product, index) => (
               <Card 
                 key={product.id} 
