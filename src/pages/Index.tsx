@@ -128,11 +128,11 @@ const Index = () => {
                 className="overflow-hidden border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 animate-fade-in flex flex-col"
                 style={{ animationDelay: `${index * 150}ms` }}
               >
-                <div className="aspect-[4/3] overflow-hidden">
+                <div className="aspect-[4/3] overflow-hidden bg-gray-50">
                   <img 
                     src={product.image} 
                     alt={product.title}
-                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full object-contain hover:scale-105 transition-transform duration-500"
                   />
                 </div>
                 <CardContent className="p-6 flex flex-col flex-grow">
@@ -299,6 +299,11 @@ const Index = () => {
                 <a href="mailto:mnogo.info@mail.ru" className="hover:text-primary transition-colors">
                   mnogo.info@mail.ru
                 </a>
+              </p>
+              
+              <p className="flex items-center justify-center gap-2">
+                <Icon name="MapPin" size={20} />
+                <span>Амурская область, г. Благовещенск, ул. Забурхановская, 98, оф. 4</span>
               </p>
             </div>
           </div>
