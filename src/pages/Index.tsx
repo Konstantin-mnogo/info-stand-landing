@@ -139,6 +139,15 @@ const Index = () => {
                 <Icon name="MessageCircle" size={18} />
                 WhatsApp
               </a>
+              <a 
+                href="https://max.ru/u/f9LHodD0cOL6WIiGv6jxM0arnsDy0CSoHUwd9HyexaP5gg2Rhy8ghzEpxj0" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-secondary hover:text-primary transition-colors flex items-center gap-2"
+              >
+                <Icon name="MessageSquare" size={18} />
+                Max
+              </a>
               <Button 
                 size="sm"
                 onClick={() => document.getElementById('order')?.scrollIntoView({ behavior: 'smooth' })}
@@ -189,6 +198,16 @@ const Index = () => {
               >
                 <Icon name="MessageCircle" size={18} />
                 WhatsApp
+              </a>
+              <a 
+                href="https://max.ru/u/f9LHodD0cOL6WIiGv6jxM0arnsDy0CSoHUwd9HyexaP5gg2Rhy8ghzEpxj0" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-secondary hover:text-primary transition-colors py-2 flex items-center gap-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <Icon name="MessageSquare" size={18} />
+                Max
               </a>
               <Button 
                 className="w-full"
@@ -414,7 +433,7 @@ const Index = () => {
                     <Icon name="Send" size={20} />
                     <span>Telegram</span>
                   </a>
-                  <a href="https://maxim.ru" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-primary transition-colors">
+                  <a href="https://max.ru/u/f9LHodD0cOL6WIiGv6jxM0arnsDy0CSoHUwd9HyexaP5gg2Rhy8ghzEpxj0" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-primary transition-colors">
                     <Icon name="MessageSquare" size={20} />
                     <span>Max</span>
                   </a>
