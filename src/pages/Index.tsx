@@ -311,7 +311,7 @@ const Index = () => {
           <div className="mt-8 max-w-4xl mx-auto">
             <div className="rounded-lg overflow-hidden shadow-xl">
               <iframe 
-                src="https://yandex.ru/map-widget/v1/?ll=127.540247%2C50.268757&z=17&l=map&pt=127.540247,50.268757,pm2rdm" 
+                src="https://widgets.2gis.com/widget?type=firmsonmap&options=%7B%22pos%22%3A%7B%22lat%22%3A50.27651596728516%2C%22lon%22%3A127.52862548828125%2C%22zoom%22%3A16%7D%2C%22opt%22%3A%7B%22city%22%3A%22blagoveshensk%22%7D%2C%22org%22%3A%227318985049645687%22%7D" 
                 width="100%" 
                 height="400" 
                 frameBorder="0"
