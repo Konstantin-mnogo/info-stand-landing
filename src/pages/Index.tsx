@@ -18,7 +18,7 @@ const Index = () => {
       id: 1,
       title: 'Настенные стенды',
       description: 'Идеально для офисов и помещений. Легкая установка, современный дизайн.',
-      image: 'НАСТЕННЫЕ_СТЕНДЫ_URL'
+      image: 'https://cdn.poehali.dev/files/9dc5c71d-2658-49df-8e62-62f7f91b7c9b.JPG'
     },
     {
       id: 2,
@@ -30,13 +30,13 @@ const Index = () => {
       id: 3,
       title: 'Стенды с подсветкой',
       description: 'Современные стенды со встроенной LED-подсветкой для максимальной видимости.',
-      image: 'СВЕТОВОЙ_СТЕНД_URL'
+      image: 'https://cdn.poehali.dev/files/7774d51f-39c8-43c7-ba89-807eb0dd71c5.JPG'
     },
     {
       id: 4,
       title: 'Стенды из акрила',
       description: 'Прозрачные конструкции из оргстекла. Стильное решение для современных офисов.',
-      image: 'АКРИЛ_URL'
+      image: 'https://cdn.poehali.dev/files/1363c57e-8e91-4cb2-b572-381164ce014d.JPG'
     }
   ];
 
