@@ -365,9 +365,9 @@ const Index = () => {
                 </a>
               </p>
               
-              <p className="flex items-center justify-center gap-2">
-                <Icon name="MapPin" size={20} />
-                <span>Амурская область, г. Благовещенск, ул. Забурхановская, 98, оф. 4</span>
+              <p className="flex items-center justify-center gap-2 flex-wrap text-center">
+                <Icon name="MapPin" size={20} className="shrink-0" />
+                <span className="break-words">Амурская область, г. Благовещенск, ул. Забурхановская, 98, оф. 4</span>
               </p>
             </div>
           </div>
@@ -375,7 +375,7 @@ const Index = () => {
           <div className="mt-8 max-w-4xl mx-auto">
             <div className="rounded-lg overflow-hidden shadow-xl">
               <iframe 
-                src="https://yandex.ru/map-widget/v1/?ll=127.528625%2C50.276516&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1NjgyMTkzMBJf0KDQvtGB0YHQuNGPLCDQkNC80YPRgNGB0LrQsNGPINC-0LHQu9Cw0YHRgtGMLCDQkdC70LDQs9C-0LLQtdGJ0LXQvdGB0LosINGD0LvQuNGG0LAg0JfQsNCx0YPRgNGF0LDQvdC-0LLRgdC60LDRjywgOTgiCg08v-BRQhWNWyJC&z=17" 
+                src="https://yandex.ru/map-widget/v1/?ll=127.540956%2C50.279383&z=17&l=map&pt=127.540956,50.279383,pm2rdm" 
                 width="100%" 
                 height="400" 
                 frameBorder="0"
