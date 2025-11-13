@@ -308,6 +308,19 @@ const Index = () => {
             </div>
           </div>
           
+          <div className="mt-8 max-w-4xl mx-auto">
+            <div className="rounded-lg overflow-hidden shadow-xl">
+              <iframe 
+                src="https://yandex.ru/map-widget/v1/?um=constructor%3A6e8c3f5d8e8f5c3d8e8f5c3d8e8f5c3d&amp;source=constructor" 
+                width="100%" 
+                height="400" 
+                frameBorder="0"
+                title="Карта расположения офиса"
+                className="w-full"
+              ></iframe>
+            </div>
+          </div>
+          
           <div className="mt-8 pt-8 border-t border-white/20 text-white/60 text-center">
             <p className="mb-3">&copy; 2025 многостендов.рф</p>
             <div className="flex items-center justify-center gap-6 text-sm">
