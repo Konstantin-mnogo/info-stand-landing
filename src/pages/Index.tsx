@@ -375,7 +375,7 @@ const Index = () => {
           <div className="mt-8 max-w-4xl mx-auto">
             <div className="rounded-lg overflow-hidden shadow-xl">
               <iframe 
-                src="https://yandex.ru/map-widget/v1/?z=16&ol=biz&oid=7318985049645687" 
+                src="https://yandex.ru/map-widget/v1/?ll=127.528625%2C50.276516&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1NjgyMTkzMBJf0KDQvtGB0YHQuNGPLCDQkNC80YPRgNGB0LrQsNGPINC-0LHQu9Cw0YHRgtGMLCDQkdC70LDQs9C-0LLQtdGJ0LXQvdGB0LosINGD0LvQuNGG0LAg0JfQsNCx0YPRgNGF0LDQvdC-0LLRgdC60LDRjywgOTgiCg08v-BRQhWNWyJC&z=17" 
                 width="100%" 
                 height="400" 
                 frameBorder="0"
