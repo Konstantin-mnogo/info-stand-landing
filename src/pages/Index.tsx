@@ -18,13 +18,13 @@ const Index = () => {
       id: 1,
       title: 'Навигационные стенды и таблички',
       description: 'Идеально для офисов и помещений. Легкая установка, современный дизайн.',
-      image: 'НАСТЕННЫЙ_СТЕНД_НОВЫЙ'
+      image: 'https://cdn.poehali.dev/files/60e3bb2e-472b-4985-9a36-04cca3d0a10f.JPG'
     },
     {
       id: 2,
       title: 'Информационные доски',
       description: 'Многосекционные стенды с возможностью размещения документов и объявлений.',
-      image: 'ИНФОРМАЦИЯ_1'
+      image: 'https://cdn.poehali.dev/files/b00e0eff-aad7-4795-8de1-4d13a6216564.JPG'
     },
     {
       id: 3,
@@ -36,7 +36,7 @@ const Index = () => {
       id: 4,
       title: 'Стенды из акрила',
       description: 'Прозрачные конструкции из оргстекла. Стильное решение для современных офисов.',
-      image: 'АКРИЛ_НОВЫЙ'
+      image: 'https://cdn.poehali.dev/files/985a346a-4662-466e-a92e-8866cab21ef7.JPG'
     }
   ];
 
@@ -125,7 +125,7 @@ const Index = () => {
             {products.map((product, index) => (
               <Card 
                 key={product.id} 
-                className="overflow-hidden border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 animate-fade-in"
+                className="overflow-hidden border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 animate-fade-in flex flex-col"
                 style={{ animationDelay: `${index * 150}ms` }}
               >
                 <div className="aspect-[4/3] overflow-hidden">
@@ -135,15 +135,15 @@ const Index = () => {
                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                   />
                 </div>
-                <CardContent className="p-6">
+                <CardContent className="p-6 flex flex-col flex-grow">
                   <h3 className="font-heading text-2xl font-semibold mb-3 text-secondary">
                     {product.title}
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed mb-4">
+                  <p className="text-muted-foreground leading-relaxed mb-4 flex-grow">
                     {product.description}
                   </p>
                   <Button 
-                    className="w-full"
+                    className="w-full mt-auto"
                     onClick={() => document.getElementById('order')?.scrollIntoView({ behavior: 'smooth' })}
                   >
                     Узнать цену
