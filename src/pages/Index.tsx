@@ -30,7 +30,7 @@ const Index = () => {
       id: 3,
       title: 'Стенды с подсветкой',
       description: 'Современные стенды со встроенной LED-подсветкой для максимальной видимости.',
-      image: 'https://cdn.poehali.dev/files/7774d51f-39c8-43c7-ba89-807eb0dd71c5.JPG'
+      image: 'https://cdn.poehali.dev/files/aa4654eb-a164-464c-b6a0-52cd339cf009.jpg'
     },
     {
       id: 4,
