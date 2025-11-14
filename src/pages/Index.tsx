@@ -467,6 +467,17 @@ const Index = () => {
                 allowFullScreen
               ></iframe>
             </div>
+            <div className="mt-4 text-center">
+              <a 
+                href="https://yandex.ru/maps/?rtext=~50.279530,127.541600" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-white/80 hover:text-primary transition-colors"
+              >
+                <Icon name="Navigation" size={18} />
+                Проложить маршрут
+              </a>
+            </div>
           </div>
           
           <div className="mt-8 pt-8 border-t border-white/20 text-white/60 text-center">
