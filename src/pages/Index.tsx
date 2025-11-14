@@ -458,7 +458,7 @@ const Index = () => {
           <div className="mt-8 max-w-4xl mx-auto">
             <div className="rounded-lg overflow-hidden shadow-xl">
               <iframe 
-                src="https://yandex.ru/map-widget/v1/?ll=127.540956%2C50.279383&z=17&l=map&pt=127.540956,50.279383,pm2rdm" 
+                src="https://yandex.ru/map-widget/v1/?ll=127.541600%2C50.279530&z=17&l=map&pt=127.541600,50.279530,pm2rdm" 
                 width="100%" 
                 height="400" 
                 frameBorder="0"
