@@ -458,7 +458,7 @@ const Index = () => {
           <div className="mt-8 max-w-4xl mx-auto">
             <div className="rounded-lg overflow-hidden shadow-xl">
               <iframe 
-                src="https://yandex.ru/map-widget/v1/?ll=127.541600%2C50.279530&z=17&l=map&pt=127.541600,50.279530,pm2rdm" 
+                src="https://yandex.ru/map-widget/v1/?ll=127.541000%2C50.280500&z=17&l=map&mode=search&text=%D0%91%D0%BB%D0%B0%D0%B3%D0%BE%D0%B2%D0%B5%D1%89%D0%B5%D0%BD%D1%81%D0%BA%20%D0%97%D0%B0%D0%B1%D1%83%D1%80%D1%85%D0%B0%D0%BD%D0%BE%D0%B2%D1%81%D0%BA%D0%B0%D1%8F%2098" 
                 width="100%" 
                 height="400" 
                 frameBorder="0"
@@ -469,7 +469,7 @@ const Index = () => {
             </div>
             <div className="mt-4 text-center">
               <a 
-                href="https://yandex.ru/maps/?rtext=~50.279530,127.541600" 
+                href="https://yandex.ru/maps/?text=Благовещенск%20Забурхановская%2098" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-white/80 hover:text-primary transition-colors"
