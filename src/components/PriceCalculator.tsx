@@ -3,14 +3,19 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Checkbox } from '@/components/ui/checkbox';
+import { Button } from '@/components/ui/button';
 
 const PriceCalculator = () => {
   const [width, setWidth] = useState<number>(100);
   const [height, setHeight] = useState<number>(100);
   const [pvcThickness, setPvcThickness] = useState<string>('3mm');
   const [printing, setPrinting] = useState<string>('interior');
-  const [pockets, setPockets] = useState<string[]>([]);
+  const [pocketCounts, setPocketCounts] = useState<Record<string, number>>({
+    a5: 0,
+    a4: 0,
+    a3: 0,
+    a2: 0
+  });
 
   const pvcPrices: Record<string, number> = {
     '3mm': 700,
@@ -33,16 +38,45 @@ const PriceCalculator = () => {
     a2: 650
   };
 
+  const printingNames: Record<string, string> = {
+    interior: 'Печать интерьерная без ламинации',
+    interiorLaminated: 'Печать интерьерная с ламинацией',
+    uvVinyl: 'УФ печать на виниловой пленке',
+    oracal: 'Аппликация Оракал 641'
+  };
+
   const area = (width * height) / 10000;
   const pvcCost = area * pvcPrices[pvcThickness];
   const printingCost = area * printingPrices[printing];
-  const pocketsCost = pockets.reduce((sum, size) => sum + pocketPrices[size], 0);
+  const pocketsCost = Object.entries(pocketCounts).reduce(
+    (sum, [size, count]) => sum + pocketPrices[size] * count, 0
+  );
   const totalPrice = Math.round(pvcCost + printingCost + pocketsCost);
 
-  const togglePocket = (size: string) => {
-    setPockets(prev => 
-      prev.includes(size) ? prev.filter(s => s !== size) : [...prev, size]
-    );
+  const updatePocketCount = (size: string, value: number) => {
+    setPocketCounts(prev => ({
+      ...prev,
+      [size]: Math.max(0, value)
+    }));
+  };
+
+  const handleSendCalculation = () => {
+    const pocketsText = Object.entries(pocketCounts)
+      .filter(([_, count]) => count > 0)
+      .map(([size, count]) => `${size.toUpperCase()}: ${count} шт`)
+      .join(', ');
+
+    const message = `Расчет стоимости стенда:\n\nРазмер: ${width}x${height} см\nПВХ: ${pvcThickness}\nИзображение: ${printingNames[printing]}${pocketsText ? `\nКарманы: ${pocketsText}` : ''}\n\nИтого: ${totalPrice.toLocaleString('ru-RU')} ₽`;
+    
+    const orderSection = document.getElementById('order');
+    if (orderSection) {
+      const textarea = orderSection.querySelector('textarea') as HTMLTextAreaElement;
+      if (textarea) {
+        textarea.value = message;
+        textarea.focus();
+      }
+      orderSection.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
@@ -128,76 +162,69 @@ const PriceCalculator = () => {
 
             <div className="space-y-3">
               <Label className="text-base">Карманы (опционально)</Label>
-              <div className="grid grid-cols-2 gap-3">
-                <div className="flex items-center space-x-2">
-                  <Checkbox 
-                    id="a5" 
-                    checked={pockets.includes('a5')}
-                    onCheckedChange={() => togglePocket('a5')}
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <Label htmlFor="a5" className="text-sm">А5</Label>
+                  <Input
+                    id="a5"
+                    type="number"
+                    min="0"
+                    value={pocketCounts.a5}
+                    onChange={(e) => updatePocketCount('a5', Number(e.target.value))}
+                    placeholder="Количество"
                   />
-                  <label htmlFor="a5" className="text-sm cursor-pointer">
-                    А5
-                  </label>
                 </div>
-                <div className="flex items-center space-x-2">
-                  <Checkbox 
-                    id="a4" 
-                    checked={pockets.includes('a4')}
-                    onCheckedChange={() => togglePocket('a4')}
+                <div className="space-y-2">
+                  <Label htmlFor="a4" className="text-sm">А4</Label>
+                  <Input
+                    id="a4"
+                    type="number"
+                    min="0"
+                    value={pocketCounts.a4}
+                    onChange={(e) => updatePocketCount('a4', Number(e.target.value))}
+                    placeholder="Количество"
                   />
-                  <label htmlFor="a4" className="text-sm cursor-pointer">
-                    А4
-                  </label>
                 </div>
-                <div className="flex items-center space-x-2">
-                  <Checkbox 
-                    id="a3" 
-                    checked={pockets.includes('a3')}
-                    onCheckedChange={() => togglePocket('a3')}
+                <div className="space-y-2">
+                  <Label htmlFor="a3" className="text-sm">А3</Label>
+                  <Input
+                    id="a3"
+                    type="number"
+                    min="0"
+                    value={pocketCounts.a3}
+                    onChange={(e) => updatePocketCount('a3', Number(e.target.value))}
+                    placeholder="Количество"
                   />
-                  <label htmlFor="a3" className="text-sm cursor-pointer">
-                    А3
-                  </label>
                 </div>
-                <div className="flex items-center space-x-2">
-                  <Checkbox 
-                    id="a2" 
-                    checked={pockets.includes('a2')}
-                    onCheckedChange={() => togglePocket('a2')}
+                <div className="space-y-2">
+                  <Label htmlFor="a2" className="text-sm">А2</Label>
+                  <Input
+                    id="a2"
+                    type="number"
+                    min="0"
+                    value={pocketCounts.a2}
+                    onChange={(e) => updatePocketCount('a2', Number(e.target.value))}
+                    placeholder="Количество"
                   />
-                  <label htmlFor="a2" className="text-sm cursor-pointer">
-                    А2
-                  </label>
                 </div>
               </div>
             </div>
 
             <div className="mt-8 pt-6 border-t">
-              <div className="flex justify-between items-center mb-2">
-                <span className="text-muted-foreground">Площадь:</span>
-                <span className="font-medium">{area.toFixed(2)} м²</span>
-              </div>
-              <div className="flex justify-between items-center mb-2">
-                <span className="text-muted-foreground">ПВХ:</span>
-                <span className="font-medium">{Math.round(pvcCost)} ₽</span>
-              </div>
-              <div className="flex justify-between items-center mb-2">
-                <span className="text-muted-foreground">Изображение:</span>
-                <span className="font-medium">{Math.round(printingCost)} ₽</span>
-              </div>
-              {pocketsCost > 0 && (
-                <div className="flex justify-between items-center mb-2">
-                  <span className="text-muted-foreground">Карманы:</span>
-                  <span className="font-medium">{pocketsCost} ₽</span>
-                </div>
-              )}
-              <div className="flex justify-between items-center text-2xl font-bold mt-4 pt-4 border-t">
+              <div className="flex justify-between items-center text-3xl font-bold mb-4">
                 <span className="text-secondary">Итого:</span>
                 <span className="text-primary">{totalPrice.toLocaleString('ru-RU')} ₽</span>
               </div>
-              <p className="text-sm text-muted-foreground mt-4 text-center">
-                * Стоимость без учета макета и монтажа. Точную цену уточняйте у менеджера
+              <p className="text-sm text-muted-foreground mb-4 text-center">
+                Стоимость примерная без учета макета, монтажа и других доп. услуг
               </p>
+              <Button 
+                className="w-full" 
+                size="lg"
+                onClick={handleSendCalculation}
+              >
+                Отправить заявку с расчетом
+              </Button>
             </div>
           </CardContent>
         </Card>
