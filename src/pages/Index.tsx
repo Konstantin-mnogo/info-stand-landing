@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
 import ProductsSection from '@/components/ProductsSection';
 import AdvantagesSection from '@/components/AdvantagesSection';
+import PriceCalculator from '@/components/PriceCalculator';
 import OrderForm from '@/components/OrderForm';
 import Footer from '@/components/Footer';
 import CookieBanner from '@/components/CookieBanner';
@@ -32,6 +33,7 @@ const Index = () => {
       <HeroSection />
       <ProductsSection />
       <AdvantagesSection />
+      <PriceCalculator />
       <OrderForm />
       <Footer />
       <CookieBanner />
