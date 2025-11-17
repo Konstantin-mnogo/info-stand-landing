@@ -74,11 +74,13 @@ const Footer = () => {
         </div>
         
         <div className="mt-8 pt-8 border-t border-white/20 text-white/60 text-center">
-          <p className="mb-3">&copy; 2025 многостендов.рф</p>
-          <div className="flex items-center justify-center gap-6 text-sm">
-            <a href="#" className="hover:text-white transition-colors">Пользовательское соглашение</a>
+          <p className="mb-3">&copy; 2025 многостендов.рф | ООО "Консалт" | ИНН 2801227832 | ОГРН 1172801001174</p>
+          <div className="flex items-center justify-center gap-4 text-sm flex-wrap">
+            <a href="/terms-of-service" className="hover:text-white transition-colors">Пользовательское соглашение</a>
             <span>•</span>
-            <a href="#" className="hover:text-white transition-colors">Соглашение на обработку данных</a>
+            <a href="/privacy-policy" className="hover:text-white transition-colors">Обработка персональных данных</a>
+            <span>•</span>
+            <a href="/cookie-policy" className="hover:text-white transition-colors">Политика cookie</a>
           </div>
         </div>
       </div>

@@ -6,6 +6,7 @@ import ProductsSection from '@/components/ProductsSection';
 import AdvantagesSection from '@/components/AdvantagesSection';
 import OrderForm from '@/components/OrderForm';
 import Footer from '@/components/Footer';
+import CookieBanner from '@/components/CookieBanner';
 
 const Index = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -33,6 +34,7 @@ const Index = () => {
       <AdvantagesSection />
       <OrderForm />
       <Footer />
+      <CookieBanner />
     </div>
   );
 };
