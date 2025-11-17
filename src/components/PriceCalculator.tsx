@@ -131,18 +131,14 @@ const PriceCalculator = () => {
         }}
       >
         <div 
-          className="absolute top-0 left-0 right-0 flex items-center justify-center text-secondary font-bold px-4"
+          className="absolute top-4 left-4 text-secondary font-bold bg-white/90 px-3 py-2 shadow-md"
+          style={{ 
+            fontSize: `${Math.max(12, baseFontSize * 0.4)}px`,
+            fontFamily: fontFamilyMap[fontFamily],
+            maxWidth: '50%'
+          }}
         >
-          <div
-            style={{ 
-              fontSize: `${baseFontSize}px`,
-              fontFamily: fontFamilyMap[fontFamily],
-              padding: `${previewHeight * 0.05}px`,
-              textAlign: 'center'
-            }}
-          >
-            {headerText || 'ИНФОРМАЦИЯ'}
-          </div>
+          {headerText || 'ИНФОРМАЦИЯ'}
         </div>
 
         <div className="absolute bottom-0 left-0 right-0 p-4 flex flex-wrap justify-center items-end gap-2">
