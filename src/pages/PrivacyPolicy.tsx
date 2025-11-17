@@ -118,12 +118,11 @@ const PrivacyPolicy = () => {
               Все предложения или вопросы по поводу настоящей Политики следует направлять по контактам:
             </p>
             <div className="bg-muted/30 p-6 rounded-lg">
-              <p className="font-semibold mb-2">ООО "Консалт"</p>
+              <p className="font-semibold mb-3">ООО "Консалт"</p>
               <p className="text-muted-foreground">ИНН: 2801227832</p>
               <p className="text-muted-foreground">ОГРН: 1172801001174</p>
-              <p className="text-muted-foreground">
-                Адрес: Амурская область, г. Благовещенск, ул. Забурхановская, 98, оф. 4
-              </p>
+              <p className="text-muted-foreground mt-3">Юридический адрес: 675000, Амурская область, город Благовещенск, Забурхановская ул., д. 98</p>
+              <p className="text-muted-foreground">Почтовый адрес: 675000, Амурская область, город Благовещенск, Забурхановская ул., д. 98</p>
               <p className="text-muted-foreground mt-3">
                 Email: <a href="mailto:mnogo.info@mail.ru" className="text-primary hover:underline">mnogo.info@mail.ru</a>
               </p>
