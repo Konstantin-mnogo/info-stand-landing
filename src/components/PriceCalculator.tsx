@@ -381,7 +381,7 @@ const PriceCalculator = () => {
             <div className="mt-8 pt-6 border-t">
               <div className="flex justify-between items-center text-3xl font-bold mb-4">
                 <span className="text-secondary">Итого:</span>
-                <span className="text-primary">*{totalPrice.toLocaleString('ru-RU')} ₽</span>
+                <span className="text-primary">{totalPrice.toLocaleString('ru-RU')} ₽<sup className="text-lg">*</sup></span>
               </div>
               <p className="text-sm text-muted-foreground mb-4 text-center">
                 * Стоимость без учета макета, монтажа и других доп. услуг. Менеджер уточнит все требования и особенности заказа.
