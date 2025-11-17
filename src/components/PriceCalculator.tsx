@@ -169,9 +169,9 @@ const PriceCalculator = () => {
                     id="a5"
                     type="number"
                     min="0"
-                    value={pocketCounts.a5}
+                    value={pocketCounts.a5 || ''}
                     onChange={(e) => updatePocketCount('a5', Number(e.target.value))}
-                    placeholder="Количество"
+                    placeholder="0"
                   />
                 </div>
                 <div className="space-y-2">
@@ -180,9 +180,9 @@ const PriceCalculator = () => {
                     id="a4"
                     type="number"
                     min="0"
-                    value={pocketCounts.a4}
+                    value={pocketCounts.a4 || ''}
                     onChange={(e) => updatePocketCount('a4', Number(e.target.value))}
-                    placeholder="Количество"
+                    placeholder="0"
                   />
                 </div>
                 <div className="space-y-2">
@@ -191,9 +191,9 @@ const PriceCalculator = () => {
                     id="a3"
                     type="number"
                     min="0"
-                    value={pocketCounts.a3}
+                    value={pocketCounts.a3 || ''}
                     onChange={(e) => updatePocketCount('a3', Number(e.target.value))}
-                    placeholder="Количество"
+                    placeholder="0"
                   />
                 </div>
                 <div className="space-y-2">
@@ -202,9 +202,9 @@ const PriceCalculator = () => {
                     id="a2"
                     type="number"
                     min="0"
-                    value={pocketCounts.a2}
+                    value={pocketCounts.a2 || ''}
                     onChange={(e) => updatePocketCount('a2', Number(e.target.value))}
-                    placeholder="Количество"
+                    placeholder="0"
                   />
                 </div>
               </div>
