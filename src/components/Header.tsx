@@ -17,6 +17,7 @@ const Header = ({ mobileMenuOpen, setMobileMenuOpen }: HeaderProps) => {
           <nav className="hidden md:flex items-center gap-8">
             <a href="#products" className="text-secondary hover:text-primary transition-colors">Продукция</a>
             <a href="#advantages" className="text-secondary hover:text-primary transition-colors">Преимущества</a>
+            <a href="#calculator" className="text-secondary hover:text-primary transition-colors">Калькулятор</a>
             <a href="#contacts" className="text-secondary hover:text-primary transition-colors">Контакты</a>
             <a 
               href="https://wa.me/79965269483" 
@@ -69,6 +70,13 @@ const Header = ({ mobileMenuOpen, setMobileMenuOpen }: HeaderProps) => {
               onClick={() => setMobileMenuOpen(false)}
             >
               Преимущества
+            </a>
+            <a 
+              href="#calculator" 
+              className="text-secondary hover:text-primary transition-colors py-2"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Калькулятор
             </a>
             <a 
               href="#contacts" 
