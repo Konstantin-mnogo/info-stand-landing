@@ -91,8 +91,9 @@ const PriceCalculator = () => {
 
 
   const renderPreview = () => {
-    const maxWidth = 400;
-    const maxHeight = 500;
+    const isMobile = window.innerWidth < 768;
+    const maxWidth = isMobile ? Math.min(window.innerWidth - 80, 350) : 400;
+    const maxHeight = isMobile ? 400 : 500;
     const aspectRatio = width / height;
     
     let previewWidth = maxWidth;
@@ -195,16 +196,16 @@ const PriceCalculator = () => {
   };
 
   return (
-    <section id="calculator" className="py-20 px-6 bg-muted/30">
+    <section id="calculator" className="py-12 sm:py-20 px-4 sm:px-6 bg-muted/30">
       <div className="container mx-auto max-w-7xl">
-        <h2 className="font-heading text-4xl md:text-5xl font-bold text-center mb-4 text-secondary">
+        <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-3 sm:mb-4 text-secondary">
           Калькулятор стоимости
         </h2>
-        <p className="text-center text-muted-foreground mb-12 text-lg">
+        <p className="text-center text-muted-foreground mb-8 sm:mb-12 text-base sm:text-lg px-2">
           Рассчитайте примерную стоимость без учета макета и монтажа
         </p>
 
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
           <Card className="shadow-xl">
             <CardHeader>
               <CardTitle className="text-2xl text-secondary">Параметры стенда</CardTitle>
@@ -400,9 +401,9 @@ const PriceCalculator = () => {
 
         <Card className="shadow-xl">
           <CardHeader>
-            <CardTitle className="text-2xl text-secondary">Визуализация</CardTitle>
+            <CardTitle className="text-xl sm:text-2xl text-secondary">Визуализация</CardTitle>
           </CardHeader>
-          <CardContent className="flex items-center justify-center min-h-[500px]">
+          <CardContent className="flex items-center justify-center min-h-[300px] sm:min-h-[500px] p-4 sm:p-6 overflow-hidden">
             {renderPreview()}
           </CardContent>
         </Card>
