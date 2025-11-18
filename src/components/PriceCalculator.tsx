@@ -54,7 +54,8 @@ const PriceCalculator = () => {
   const pocketsCost = Object.entries(pocketCounts).reduce(
     (sum, [size, count]) => sum + pocketPrices[size] * count, 0
   );
-  const totalPrice = Math.round(pvcCost + printingCost + pocketsCost);
+  const calculatedPrice = Math.round(pvcCost + printingCost + pocketsCost);
+  const totalPrice = Math.max(1500, calculatedPrice);
 
   const updatePocketCount = (size: string, value: number) => {
     setPocketCounts(prev => ({
