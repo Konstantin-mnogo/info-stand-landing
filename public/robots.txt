@@ -1,14 +1,24 @@
+User-agent: *
+Allow: /
+Disallow: /analytics
+
+Sitemap: https://многостендов.рф/sitemap.xml
+
 User-agent: Googlebot
 Allow: /
+Disallow: /analytics
 
 User-agent: Bingbot
 Allow: /
+Disallow: /analytics
+
+User-agent: Yandex
+Allow: /
+Disallow: /analytics
+Crawl-delay: 1
 
 User-agent: Twitterbot
 Allow: /
 
 User-agent: facebookexternalhit
-Allow: /
-
-User-agent: *
 Allow: /

@@ -58,7 +58,7 @@ const ProductsSection = () => {
   ];
 
   return (
-    <section id="products" className="py-20 px-6 bg-background">
+    <section id="products" className="py-20 px-6 bg-background" aria-label="Каталог продукции">
       <div className="container mx-auto">
         <h2 className="font-heading text-4xl md:text-5xl font-bold text-center mb-4 text-secondary">
           Наша продукция

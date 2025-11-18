@@ -55,7 +55,7 @@ const OrderForm = () => {
   };
 
   return (
-    <section id="order" className="py-20 px-6 bg-background">
+    <section id="order" className="py-20 px-6 bg-background" aria-label="Форма заказа">
       <div className="container mx-auto max-w-2xl">
         <h2 className="font-heading text-4xl md:text-5xl font-bold text-center mb-4 text-secondary">
           Заказать стенд

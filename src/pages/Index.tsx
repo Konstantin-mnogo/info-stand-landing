@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Icon from '@/components/ui/icon';
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
@@ -11,6 +11,15 @@ import CookieBanner from '@/components/CookieBanner';
 
 const Index = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    document.title = 'Многостендов.рф — Производство информационных стендов';
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Производство информационных стендов на заказ в Благовещенске. Индивидуальный подход, премиум качество, гарантия 3 года.');
+    }
+  }, []);
 
   return (
     <div className="min-h-screen">

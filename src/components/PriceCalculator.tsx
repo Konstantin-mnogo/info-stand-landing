@@ -196,7 +196,7 @@ const PriceCalculator = () => {
   };
 
   return (
-    <section id="calculator" className="py-12 sm:py-20 px-4 sm:px-6 bg-muted/30">
+    <section id="calculator" className="py-12 sm:py-20 px-4 sm:px-6 bg-muted/30" aria-label="Калькулятор стоимости стенда">
       <div className="container mx-auto max-w-7xl">
         <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-3 sm:mb-4 text-secondary">
           Калькулятор стоимости

@@ -2,7 +2,7 @@ import Icon from '@/components/ui/icon';
 
 const Footer = () => {
   return (
-    <footer id="contacts" className="bg-secondary text-white py-12 px-6">
+    <footer id="contacts" className="bg-secondary text-white py-12 px-6" role="contentinfo" aria-label="Контактная информация">
       <div className="container mx-auto">
         <div className="text-center mb-8">
           <h3 className="font-heading text-2xl font-bold mb-6">Контакты</h3>
@@ -11,7 +11,7 @@ const Footer = () => {
             <div>
               <p className="flex items-center justify-center gap-2 mb-3">
                 <Icon name="Phone" size={20} />
-                <a href="tel:+74162227803" className="hover:text-primary transition-colors">
+                <a href="tel:+74162227803" className="hover:text-primary transition-colors" aria-label="Позвонить по номеру +7 4162 22-78-03">
                   +7 (4162) 22-78-03
                 </a>
               </p>
@@ -36,7 +36,7 @@ const Footer = () => {
             
             <p className="flex items-center justify-center gap-2">
               <Icon name="Mail" size={20} />
-              <a href="mailto:mnogo.info@mail.ru" className="hover:text-primary transition-colors">
+              <a href="mailto:mnogo.info@mail.ru" className="hover:text-primary transition-colors" aria-label="Написать на электронную почту">
                 mnogo.info@mail.ru
               </a>
             </p>
