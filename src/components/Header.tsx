@@ -12,7 +12,9 @@ const Header = ({ mobileMenuOpen, setMobileMenuOpen }: HeaderProps) => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <span className="font-heading text-2xl font-bold text-secondary">многостендов.рф</span>
+            <span className="font-heading text-xl md:text-2xl font-bold text-secondary leading-tight">
+              много&shy;стендов.рф
+            </span>
           </div>
           <nav className="hidden md:flex items-center gap-8">
             <a href="#products" className="text-secondary hover:text-primary transition-colors">Продукция</a>
