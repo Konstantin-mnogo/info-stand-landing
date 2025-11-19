@@ -21,24 +21,24 @@ const PriceCalculator = () => {
   const [bgColor, setBgColor] = useState<string>('white');
 
   const pvcPrices: Record<string, number> = {
-    '3mm': 700,
-    '5mm': 1150,
-    '8mm': 1190,
-    '10mm': 1450
+    '3mm': 1990,
+    '5mm': 2530,
+    '8mm': 2850,
+    '10mm': 3280
   };
 
   const printingPrices: Record<string, number> = {
-    interior: 1490,
-    interiorLaminated: 1580,
-    uvVinyl: 1810,
-    oracal: 3160
+    interior: 559,
+    interiorLaminated: 672,
+    uvVinyl: 910,
+    oracal: 2720
   };
 
   const pocketPrices: Record<string, number> = {
-    a5: 150,
-    a4: 250,
-    a3: 350,
-    a2: 650
+    a5: 100,
+    a4: 200,
+    a3: 300,
+    a2: 600
   };
 
   const printingNames: Record<string, string> = {
