@@ -144,7 +144,10 @@ const ProductOrderModal = ({ isOpen, onClose, productName }: ProductOrderModalPr
               className="mt-0.5"
             />
             <label htmlFor="modal-consent" className="text-xs text-muted-foreground leading-snug cursor-pointer">
-              Нажимая кнопку «Отправить», я даю свое согласие на обработку моих персональных данных, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных», на условиях и для целей, определенных в Согласии на обработку персональных данных.
+              Нажимая кнопку «Отправить», я даю свое согласие на обработку моих персональных данных, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных», на условиях и для целей, определенных в{' '}
+              <a href="/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                Политике конфиденциальности
+              </a>.
             </label>
           </div>
           
