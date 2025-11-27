@@ -19,12 +19,15 @@ const RegionsSection = () => {
     { name: 'Новобурейский' },
   ];
 
-  const yakutia = [
+  const farEast = [
+    { name: 'Хабаровск' },
+    { name: 'Владивосток' },
     { name: 'Якутск' },
-    { name: 'Нерюнгри' },
-    { name: 'Мирный' },
-    { name: 'Ленск' },
-    { name: 'Алдан' },
+    { name: 'Комсомольск-на-Амуре' },
+    { name: 'Южно-Сахалинск' },
+    { name: 'Петропавловск-Камчатский' },
+    { name: 'Магадан' },
+    { name: 'Биробиджан' },
   ];
 
   return (
@@ -34,7 +37,7 @@ const RegionsSection = () => {
           География работы
         </h2>
         <p className="text-center text-muted-foreground mb-12 text-lg max-w-3xl mx-auto">
-          Производим и доставляем информационные стенды по всей Амурской области и Республике Саха (Якутия)
+          Производим и доставляем информационные стенды по всей Амурской области и Дальневосточному федеральному округу
         </p>
 
         <div className="grid md:grid-cols-2 gap-8 mb-8">
@@ -67,10 +70,10 @@ const RegionsSection = () => {
           <div className="bg-background rounded-xl p-8 shadow-lg">
             <div className="flex items-center gap-3 mb-6">
               <Icon name="MapPin" size={28} className="text-primary" />
-              <h3 className="font-heading text-2xl font-bold text-secondary">Республика Саха (Якутия)</h3>
+              <h3 className="font-heading text-2xl font-bold text-secondary">Дальний Восток</h3>
             </div>
             <div className="grid grid-cols-2 gap-3">
-              {yakutia.map((city) => (
+              {farEast.map((city) => (
                 <div 
                   key={city.name}
                   className="flex items-center gap-2 text-muted-foreground"
@@ -83,7 +86,7 @@ const RegionsSection = () => {
             <div className="mt-6 pt-6 border-t border-border">
               <p className="text-sm text-muted-foreground flex items-center gap-2">
                 <Icon name="Truck" size={16} className="text-primary" />
-                <span>Организуем доставку в любой город республики</span>
+                <span>Организуем доставку в любой регион ДФО</span>
               </p>
             </div>
           </div>
