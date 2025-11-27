@@ -37,7 +37,7 @@ const RegionsSection = () => {
           География работы
         </h2>
         <p className="text-center text-muted-foreground mb-12 text-lg max-w-3xl mx-auto">
-          Производим и доставляем информационные стенды по всей Амурской области и Дальневосточному федеральному округу
+          Производство в Благовещенске. Доставка по Амурской области, ДВФО и России
         </p>
 
         <div className="grid md:grid-cols-2 gap-8 mb-8">
