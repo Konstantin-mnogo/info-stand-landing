@@ -18,7 +18,7 @@ const HeroSection = () => {
           className="bg-primary hover:bg-primary/90 text-white px-8 py-6 text-lg shadow-2xl hover:scale-105 transition-transform"
           onClick={() => document.getElementById('order')?.scrollIntoView({ behavior: 'smooth' })}
         >
-          Заказать стенд
+          Оставить заявку
         </Button>
       </div>
     </section>

@@ -58,7 +58,7 @@ const OrderForm = () => {
     <section id="order" className="py-20 px-6 bg-background" aria-label="Форма заказа">
       <div className="container mx-auto max-w-2xl">
         <h2 className="font-heading text-4xl md:text-5xl font-bold text-center mb-4 text-secondary">
-          Заказать стенд
+          Оставить заявку
         </h2>
         <p className="text-center text-muted-foreground mb-12 text-lg">
           Оставьте заявку, и мы свяжемся с вами в течение рабочего дня
