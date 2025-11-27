@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
@@ -24,6 +24,8 @@ const ProductsSection = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isDetailsOpen, setIsDetailsOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const touchStartY = useRef<number>(0);
+  const touchEndY = useRef<number>(0);
   
   const products: Product[] = [
     {
@@ -284,6 +286,21 @@ const ProductsSection = () => {
     setIsModalOpen(true);
   };
 
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartY.current = e.touches[0].clientY;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndY.current = e.touches[0].clientY;
+  };
+
+  const handleTouchEnd = () => {
+    const swipeDistance = touchEndY.current - touchStartY.current;
+    if (swipeDistance > 100) {
+      setIsDetailsOpen(false);
+    }
+  };
+
   return (
     <section id="products" className="py-20 px-6 bg-background" aria-label="Каталог продукции">
       <div className="container mx-auto">
@@ -332,9 +349,15 @@ const ProductsSection = () => {
       </div>
 
       <Dialog open={isDetailsOpen} onOpenChange={setIsDetailsOpen}>
-        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+        <DialogContent 
+          className="max-w-4xl max-h-[90vh] overflow-y-auto"
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
           {selectedProduct && (
             <>
+              <div className="md:hidden w-12 h-1 bg-gray-300 rounded-full mx-auto mb-4 -mt-2"></div>
               <DialogHeader>
                 <DialogTitle className="text-3xl font-heading text-secondary pr-8">
                   {selectedProduct.title}
