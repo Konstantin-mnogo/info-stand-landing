@@ -45,7 +45,7 @@ const PriceCalculator = () => {
     interior: 'Печать интерьерная без ламинации',
     interiorLaminated: 'Печать интерьерная с ламинацией',
     uvVinyl: 'УФ печать на виниловой пленке',
-    oracal: 'Аппликация Оракал 641'
+    oracal: 'Аппликация Oracal 641'
   };
 
   const area = (width && height) ? (width * height) / 10000 : 0;
@@ -274,7 +274,7 @@ const PriceCalculator = () => {
                   <SelectItem value="interior">Печать интерьерная без ламинации</SelectItem>
                   <SelectItem value="interiorLaminated">Печать интерьерная с ламинацией</SelectItem>
                   <SelectItem value="uvVinyl">УФ печать на виниловой пленке</SelectItem>
-                  <SelectItem value="oracal">Аппликация Оракал 641</SelectItem>
+                  <SelectItem value="oracal">Аппликация Oracal 641</SelectItem>
                 </SelectContent>
               </Select>
             </div>
