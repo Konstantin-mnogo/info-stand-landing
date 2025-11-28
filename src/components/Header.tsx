@@ -1,12 +1,17 @@
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import Icon from '@/components/ui/icon';
 
 interface HeaderProps {
-  mobileMenuOpen: boolean;
-  setMobileMenuOpen: (open: boolean) => void;
+  mobileMenuOpen?: boolean;
+  setMobileMenuOpen?: (open: boolean) => void;
 }
 
-const Header = ({ mobileMenuOpen, setMobileMenuOpen }: HeaderProps) => {
+const Header = ({ mobileMenuOpen: externalMobileMenuOpen, setMobileMenuOpen: externalSetMobileMenuOpen }: HeaderProps = {}) => {
+  const [internalMobileMenuOpen, setInternalMobileMenuOpen] = useState(false);
+  
+  const mobileMenuOpen = externalMobileMenuOpen !== undefined ? externalMobileMenuOpen : internalMobileMenuOpen;
+  const setMobileMenuOpen = externalSetMobileMenuOpen || setInternalMobileMenuOpen;
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
       <div className="container mx-auto px-6 py-4">
@@ -17,10 +22,10 @@ const Header = ({ mobileMenuOpen, setMobileMenuOpen }: HeaderProps) => {
             </span>
           </div>
           <nav className="hidden md:flex items-center gap-8">
-            <a href="#products" className="text-secondary hover:text-primary transition-colors">Продукция</a>
-            <a href="#advantages" className="text-secondary hover:text-primary transition-colors">Преимущества</a>
-            <a href="#calculator" className="text-secondary hover:text-primary transition-colors">Калькулятор</a>
-            <a href="#contacts" className="text-secondary hover:text-primary transition-colors">Контакты</a>
+            <a href="/" className="text-secondary hover:text-primary transition-colors">Главная</a>
+            <a href="/#products" className="text-secondary hover:text-primary transition-colors">Продукция</a>
+            <a href="/zakazat-stend-blagoveshchensk" className="text-secondary hover:text-primary transition-colors">Заказать стенд</a>
+            <a href="/#contacts" className="text-secondary hover:text-primary transition-colors">Контакты</a>
             <a 
               href="https://wa.me/79965269483" 
               target="_blank" 
@@ -60,28 +65,28 @@ const Header = ({ mobileMenuOpen, setMobileMenuOpen }: HeaderProps) => {
         <div className="md:hidden bg-white border-t border-gray-200 shadow-lg">
           <nav className="container mx-auto px-6 py-4 flex flex-col gap-4">
             <a 
-              href="#products" 
+              href="/" 
+              className="text-secondary hover:text-primary transition-colors py-2"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Главная
+            </a>
+            <a 
+              href="/#products" 
               className="text-secondary hover:text-primary transition-colors py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
               Продукция
             </a>
             <a 
-              href="#advantages" 
+              href="/zakazat-stend-blagoveshchensk" 
               className="text-secondary hover:text-primary transition-colors py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Преимущества
+              Заказать стенд
             </a>
             <a 
-              href="#calculator" 
-              className="text-secondary hover:text-primary transition-colors py-2"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Калькулятор
-            </a>
-            <a 
-              href="#contacts" 
+              href="/#contacts" 
               className="text-secondary hover:text-primary transition-colors py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
