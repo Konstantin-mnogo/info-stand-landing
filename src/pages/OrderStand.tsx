@@ -1,11 +1,15 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Icon from '@/components/ui/icon';
+import ProductOrderModal from '@/components/ProductOrderModal';
 
 const OrderStand = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState('');
+  
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -19,22 +23,22 @@ const OrderStand = () => {
     {
       icon: 'Clock',
       title: 'Быстрые сроки',
-      description: 'Изготовление от 3 рабочих дней в зависимости от сложности заказа'
+      description: 'Изготовление от 2 рабочих дней в зависимости от сложности заказа'
     },
     {
       icon: 'Shield',
-      title: 'Гарантия 3 года',
+      title: 'Гарантия до 3 лет',
       description: 'Официальная гарантия на все виды стендов и конструкций'
     },
     {
       icon: 'Truck',
       title: 'Доставка и монтаж',
-      description: 'Доставим и установим в любую точку Амурской области и России'
+      description: 'Доставка по Амурской области и ДВФО. Монтаж в Благовещенске'
     },
     {
       icon: 'Palette',
       title: 'Индивидуальный дизайн',
-      description: 'Разработаем макет под ваш фирменный стиль бесплатно'
+      description: 'Разработаем макет под ваш фирменный стиль'
     },
     {
       icon: 'Wrench',
@@ -122,11 +126,11 @@ const OrderStand = () => {
     },
     {
       question: 'Какие сроки изготовления стендов?',
-      answer: 'Стандартные стенды изготавливаем за 3-5 рабочих дней. Сложные проекты с индивидуальным дизайном — 7-14 дней. Срочные заказы обсуждаются индивидуально.'
+      answer: 'Стандартные стенды изготавливаем от 2 рабочих дней. Сложные проекты с индивидуальным дизайном — 5-10 дней. Срочные заказы обсуждаются индивидуально.'
     },
     {
       question: 'Вы делаете доставку по Амурской области?',
-      answer: 'Да, доставляем по всей Амурской области: Белогорск, Тында, Свободный, Райчихинск и другие города. Также организуем доставку в любой регион России.'
+      answer: 'Да, доставляем по всей Амурской области: Белогорск, Тында, Свободный, Райчихинск и другие города. Также организуем доставку по ДВФО. Монтаж выполняем в Благовещенске.'
     },
     {
       question: 'Можно ли изменить информацию на стенде?',
@@ -134,7 +138,7 @@ const OrderStand = () => {
     },
     {
       question: 'Есть ли гарантия на стенды?',
-      answer: 'На все изделия даём официальную гарантию 3 года. При правильной эксплуатации стенды служат 10+ лет.'
+      answer: 'На все изделия даём официальную гарантию до 3 лет. При правильной эксплуатации стенды служат 10+ лет.'
     },
     {
       question: 'Можете сделать стенд по нашему дизайну?',
@@ -142,13 +146,9 @@ const OrderStand = () => {
     }
   ];
 
-  const scrollToOrder = () => {
-    const orderSection = document.getElementById('order');
-    if (orderSection) {
-      orderSection.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      window.location.href = '/#order';
-    }
+  const openOrderModal = (productName: string) => {
+    setSelectedProduct(productName);
+    setIsModalOpen(true);
   };
 
   return (
@@ -173,17 +173,17 @@ const OrderStand = () => {
             </div>
             <div className="flex items-center gap-2">
               <Icon name="CheckCircle2" size={24} className="text-primary" />
-              <span>Срок от 3 дней</span>
+              <span>Срок от 2 дней</span>
             </div>
             <div className="flex items-center gap-2">
               <Icon name="CheckCircle2" size={24} className="text-primary" />
-              <span>Гарантия 3 года</span>
+              <span>Гарантия до 3 лет</span>
             </div>
           </div>
           <Button 
             size="lg" 
             className="bg-primary hover:bg-primary/90 text-white px-8 py-6 text-lg shadow-2xl"
-            onClick={scrollToOrder}
+            onClick={() => openOrderModal('Заказать стенд в Благовещенске')}
           >
             Оставить заявку
           </Button>
@@ -255,7 +255,7 @@ const OrderStand = () => {
                   <div className="text-2xl font-bold text-primary mb-4">
                     {type.price}
                   </div>
-                  <Button className="w-full" onClick={scrollToOrder}>
+                  <Button className="w-full" onClick={() => openOrderModal(type.title)}>
                     Заказать
                   </Button>
                 </CardContent>
@@ -337,7 +337,7 @@ const OrderStand = () => {
             <Button 
               size="lg" 
               className="bg-primary hover:bg-primary/90 text-white px-8 py-6 text-lg shadow-2xl"
-              onClick={scrollToOrder}
+              onClick={() => openOrderModal('Заказать стенд в Благовещенске')}
             >
               Оставить заявку
             </Button>
@@ -372,19 +372,19 @@ const OrderStand = () => {
               </li>
               <li className="flex items-start gap-2">
                 <Icon name="CheckCircle2" size={20} className="text-primary mt-1 flex-shrink-0" />
-                <span><strong>Быстрые сроки</strong> — от 3 рабочих дней</span>
+                <span><strong>Быстрые сроки</strong> — от 2 рабочих дней</span>
               </li>
               <li className="flex items-start gap-2">
                 <Icon name="CheckCircle2" size={20} className="text-primary mt-1 flex-shrink-0" />
-                <span><strong>Гарантия 3 года</strong> — уверены в качестве своей продукции</span>
+                <span><strong>Гарантия до 3 лет</strong> — уверены в качестве своей продукции</span>
               </li>
               <li className="flex items-start gap-2">
                 <Icon name="CheckCircle2" size={20} className="text-primary mt-1 flex-shrink-0" />
-                <span><strong>Доставка и монтаж</strong> — по всей Амурской области и России</span>
+                <span><strong>Доставка и монтаж</strong> — по Амурской области и ДВФО, монтаж в Благовещенске</span>
               </li>
               <li className="flex items-start gap-2">
                 <Icon name="CheckCircle2" size={20} className="text-primary mt-1 flex-shrink-0" />
-                <span><strong>Бесплатная разработка макета</strong> — учтём ваш фирменный стиль</span>
+                <span><strong>Разработка макета</strong> — учтём ваш фирменный стиль</span>
               </li>
             </ul>
 
@@ -405,7 +405,7 @@ const OrderStand = () => {
               Стоимость зависит от размера, материалов, сложности дизайна и дополнительных опций (подсветка, карманы, монтаж). Простые информационные стенды стоят от 1 500 рублей, навигационные таблички — от 500 рублей, стенды с подсветкой — от 3 000 рублей. Точную стоимость рассчитаем после уточнения ваших требований.
             </p>
             <p className="mb-4 leading-relaxed">
-              Мы предлагаем выгодные условия для постоянных клиентов и при больших объёмах заказа. Работаем как с наличным, так и с безналичным расчётом. Предоставляем все необходимые документы для бухгалтерии.
+              Мы предлагаем выгодные условия для постоянных клиентов и при больших объёмах заказа. Работаем по безналичному расчёту. Предоставляем все необходимые документы для бухгалтерии.
             </p>
 
             <h3 className="font-heading text-2xl font-bold text-secondary mt-8 mb-4">
@@ -415,13 +415,19 @@ const OrderStand = () => {
               Чтобы <strong>заказать стенд</strong>, позвоните нам по телефону <a href="tel:+74162227803" className="text-primary font-semibold">+7 (4162) 22-78-03</a> или оставьте заявку на сайте. Менеджер свяжется с вами, уточнит детали, рассчитает стоимость и при необходимости выедет на замеры. После согласования мы подготовим макет для вашего утверждения и приступим к производству.
             </p>
             <p className="leading-relaxed">
-              Готовые стенды доставим и установим в согласованные сроки. Выдадим паспорт изделия и гарантию 3 года. Обслуживаем клиентов по всей Амурской области: Благовещенск, Белогорск, Тында, Свободный, Райчихинск, Шимановск и другие города.
+              Готовые стенды доставим в согласованные сроки. Монтаж выполняем в Благовещенске. Выдадим паспорт изделия и гарантию до 3 лет. Обслуживаем клиентов по всей Амурской области и ДВФО: Благовещенск, Белогорск, Тында, Свободный, Хабаровск, Владивосток и другие города.
             </p>
           </div>
         </div>
       </section>
 
       <Footer />
+      
+      <ProductOrderModal 
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        productName={selectedProduct}
+      />
     </div>
   );
 };

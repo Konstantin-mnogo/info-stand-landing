@@ -11,7 +11,7 @@ const HeroSection = () => {
           <span className="block text-primary mt-2">под ваш проект</span>
         </h1>
         <p className="text-xl md:text-2xl mb-12 text-white/90 max-w-2xl mx-auto font-light">
-          Информационные, навигационные, с подсветкой. Производство под ключ. Гарантия 3 года
+          Информационные, навигационные, с подсветкой. Производство под ключ. Гарантия до 3 лет
         </p>
         <Button 
           size="lg" 
