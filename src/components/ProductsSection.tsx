@@ -24,8 +24,8 @@ const ProductsSection = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isDetailsOpen, setIsDetailsOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
-  const touchStartY = useRef<number>(0);
-  const touchEndY = useRef<number>(0);
+  const touchStartX = useRef<number>(0);
+  const touchEndX = useRef<number>(0);
   
   const products: Product[] = [
     {
@@ -287,15 +287,15 @@ const ProductsSection = () => {
   };
 
   const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartY.current = e.touches[0].clientY;
+    touchStartX.current = e.touches[0].clientX;
   };
 
   const handleTouchMove = (e: React.TouchEvent) => {
-    touchEndY.current = e.touches[0].clientY;
+    touchEndX.current = e.touches[0].clientX;
   };
 
   const handleTouchEnd = () => {
-    const swipeDistance = touchEndY.current - touchStartY.current;
+    const swipeDistance = touchEndX.current - touchStartX.current;
     if (swipeDistance > 100) {
       setIsDetailsOpen(false);
     }
