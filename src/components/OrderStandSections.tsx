@@ -308,9 +308,34 @@ export const SEOTextSection = () => (
         <p className="mb-4 leading-relaxed">
           Чтобы <strong>заказать стенд</strong>, позвоните нам по телефону <a href="tel:+74162227803" className="text-primary font-semibold">+7 (4162) 22-78-03</a> или оставьте заявку на сайте. Менеджер свяжется с вами, уточнит детали, рассчитает стоимость и при необходимости выедет на замеры. После согласования мы подготовим макет для вашего утверждения и приступим к производству.
         </p>
-        <p className="leading-relaxed">
+        <p className="leading-relaxed mb-8">
           Готовые стенды доставим в согласованные сроки. Монтаж выполняем в Благовещенске и Амурской области. Выдадим паспорт изделия и гарантию до 3 лет. Обслуживаем клиентов по всей Амурской области и ДВФО: Благовещенск, Белогорск, Тында, Свободный, Хабаровск, Владивосток и другие города.
         </p>
+        
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+          <Button 
+            size="lg" 
+            className="bg-primary hover:bg-primary/90 text-white px-8 py-4"
+            onClick={() => {
+              const orderSection = document.getElementById('order');
+              if (orderSection) {
+                orderSection.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
+          >
+            Заказать стенд
+          </Button>
+          <Button 
+            size="lg" 
+            variant="outline"
+            className="px-8 py-4"
+            asChild
+          >
+            <a href="tel:+74162227803">
+              Задать вопрос менеджеру
+            </a>
+          </Button>
+        </div>
       </div>
     </div>
   </section>
