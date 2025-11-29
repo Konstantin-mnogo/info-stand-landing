@@ -2,7 +2,7 @@ import { useState, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
-import ProductOrderModal from './ProductOrderModal';
+import OrderForm from './OrderForm';
 
 interface Product {
   id: number;
@@ -457,10 +457,12 @@ const ProductsSection = () => {
         </DialogContent>
       </Dialog>
 
-      <ProductOrderModal 
+      <OrderForm 
+        mode="modal"
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         productName={selectedProduct?.title || ''}
+        subject={`Запрос цены: ${selectedProduct?.title || ''}`}
       />
     </section>
   );
