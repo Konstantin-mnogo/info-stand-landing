@@ -117,9 +117,20 @@ const PriceCalculator = () => {
       }
     });
 
-    // Рассчитываем сетку карманов для корректного отображения
-    const pocketsPerRow = allPockets.length <= 2 ? allPockets.length : 2;
-    const pocketAreaWidth = previewWidth * 0.85; // 85% от ширины стенда для карманов
+    // Рассчитываем реальное количество карманов в ряд на основе размеров стенда
+    let pocketsPerRow = 1;
+    if (allPockets.length > 0) {
+      const pocketWidth = allPockets[0].width;
+      const spacing = 1; // 1 см отступ между карманами
+      const sideMargin = 2; // 2 см отступ от краёв
+      
+      // Сколько карманов поместится по ширине стенда
+      const availableWidth = width - (sideMargin * 2);
+      pocketsPerRow = Math.floor((availableWidth + spacing) / (pocketWidth + spacing));
+      
+      // Минимум 1, максимум количество карманов
+      pocketsPerRow = Math.max(1, Math.min(pocketsPerRow, allPockets.length));
+    }
     
     const baseFontSize = Math.min(previewWidth / 10, previewHeight / 8);
 
@@ -150,22 +161,17 @@ const PriceCalculator = () => {
 
         <div className="absolute bottom-0 left-0 right-0 p-2 sm:p-4">
           <div 
-            className="grid gap-1 sm:gap-2 justify-items-center items-end mx-auto"
+            className="grid justify-items-center items-end mx-auto"
             style={{
               gridTemplateColumns: `repeat(${pocketsPerRow}, minmax(0, 1fr))`,
-              maxWidth: `${pocketAreaWidth}px`
+              gap: `${scale}px`,
+              maxWidth: '90%'
             }}
           >
             {allPockets.map((pocket, index) => {
-              // Масштабируем карманы с учетом доступного места
-              let pocketWidth = pocket.width * scale * 0.9;
-              let pocketHeight = pocket.height * scale * 0.9;
-              
-              // Дополнительное уменьшение для мобильных если карманов много
-              if (isMobile && allPockets.length > 2) {
-                pocketWidth *= 0.75;
-                pocketHeight *= 0.75;
-              }
+              // Реальные размеры кармана в сантиметрах, масштабированные для превью
+              const pocketWidth = pocket.width * scale;
+              const pocketHeight = pocket.height * scale;
               
               return (
                 <div
@@ -174,12 +180,11 @@ const PriceCalculator = () => {
                   style={{
                     width: `${pocketWidth}px`,
                     height: `${pocketHeight}px`,
-                    minWidth: '25px',
-                    minHeight: '35px',
-                    maxWidth: '100%'
+                    minWidth: '20px',
+                    minHeight: '30px'
                   }}
                 >
-                  <span className="text-[0.6rem] sm:text-xs">{pocket.size.toUpperCase()}</span>
+                  <span className="text-[0.5rem] sm:text-xs">{pocket.size.toUpperCase()}</span>
                 </div>
               );
             })}
