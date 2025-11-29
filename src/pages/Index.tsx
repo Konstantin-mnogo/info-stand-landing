@@ -13,6 +13,13 @@ import CookieBanner from '@/components/CookieBanner';
 
 const Index = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isOrderModalOpen, setIsOrderModalOpen] = useState(false);
+  const [orderSubject, setOrderSubject] = useState('');
+
+  const openOrderModal = (subject: string) => {
+    setOrderSubject(subject);
+    setIsOrderModalOpen(true);
+  };
 
   useEffect(() => {
     document.title = 'Многостендов.рф — Производство информационных стендов';
@@ -40,14 +47,20 @@ const Index = () => {
         </div>
       </div>
       
-      <Header mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} />
-      <HeroSection />
+      <Header mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} onOrderClick={() => openOrderModal('Заказ стенда')} />
+      <HeroSection onOrderClick={() => openOrderModal('Заказ стенда с главной страницы')} />
       <ProductsSection />
       <AdvantagesSection />
-      <HowWeWorkSection />
+      <HowWeWorkSection onOrderClick={() => openOrderModal('Консультация по работе с нами')} />
       <RegionsSection />
       <PriceCalculator />
       <OrderForm />
+      <OrderForm 
+        mode="modal"
+        isOpen={isOrderModalOpen}
+        onClose={() => setIsOrderModalOpen(false)}
+        subject={orderSubject}
+      />
       <Footer />
       <CookieBanner />
     </div>

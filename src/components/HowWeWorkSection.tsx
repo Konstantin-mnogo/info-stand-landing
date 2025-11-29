@@ -1,7 +1,11 @@
 import { Card, CardContent } from '@/components/ui/card';
 import Icon from '@/components/ui/icon';
 
-const HowWeWorkSection = () => {
+interface HowWeWorkSectionProps {
+  onOrderClick?: () => void;
+}
+
+const HowWeWorkSection = ({ onOrderClick }: HowWeWorkSectionProps = {}) => {
   const steps = [
     {
       id: 1,
@@ -143,12 +147,12 @@ const HowWeWorkSection = () => {
             <p className="text-lg text-muted-foreground mb-4">
               Готовы подготовить концепцию под ваш объект и бюджет
             </p>
-            <a 
-              href="#order"
+            <button 
+              onClick={onOrderClick}
               className="inline-flex items-center justify-center rounded-lg bg-primary px-8 py-3 text-white font-semibold hover:bg-primary/90 transition-colors duration-300"
             >
               Получить консультацию
-            </a>
+            </button>
           </div>
         </div>
       </div>

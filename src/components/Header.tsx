@@ -5,9 +5,10 @@ import Icon from '@/components/ui/icon';
 interface HeaderProps {
   mobileMenuOpen?: boolean;
   setMobileMenuOpen?: (open: boolean) => void;
+  onOrderClick?: () => void;
 }
 
-const Header = ({ mobileMenuOpen: externalMobileMenuOpen, setMobileMenuOpen: externalSetMobileMenuOpen }: HeaderProps = {}) => {
+const Header = ({ mobileMenuOpen: externalMobileMenuOpen, setMobileMenuOpen: externalSetMobileMenuOpen, onOrderClick }: HeaderProps = {}) => {
   const [internalMobileMenuOpen, setInternalMobileMenuOpen] = useState(false);
   
   const mobileMenuOpen = externalMobileMenuOpen !== undefined ? externalMobileMenuOpen : internalMobileMenuOpen;
@@ -46,7 +47,7 @@ const Header = ({ mobileMenuOpen: externalMobileMenuOpen, setMobileMenuOpen: ext
             </a>
             <Button 
               size="sm"
-              onClick={() => document.getElementById('order')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={onOrderClick}
             >
               Заказать
             </Button>
@@ -116,7 +117,7 @@ const Header = ({ mobileMenuOpen: externalMobileMenuOpen, setMobileMenuOpen: ext
               className="w-full"
               onClick={() => {
                 setMobileMenuOpen(false);
-                document.getElementById('order')?.scrollIntoView({ behavior: 'smooth' });
+                if (onOrderClick) onOrderClick();
               }}
             >
               Заказать
