@@ -198,17 +198,17 @@ const PriceCalculator = () => {
   return (
     <section id="calculator" className="py-12 sm:py-20 px-4 sm:px-6 bg-muted/30" aria-label="Калькулятор стоимости стенда">
       <div className="container mx-auto max-w-7xl">
-        <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-3 sm:mb-4 text-secondary">
+        <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-3 sm:mb-4 text-secondary break-words px-4">
           Калькулятор стоимости
         </h2>
-        <p className="text-center text-muted-foreground mb-8 sm:mb-12 text-base sm:text-lg px-2">
+        <p className="text-center text-muted-foreground mb-8 sm:mb-12 text-sm sm:text-base md:text-lg px-4 leading-relaxed">
           Рассчитайте примерную стоимость без учета макета и монтажа
         </p>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
           <Card className="shadow-xl">
             <CardHeader>
-              <CardTitle className="text-2xl text-secondary">Параметры стенда</CardTitle>
+              <CardTitle className="text-xl sm:text-2xl text-secondary">Параметры стенда</CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">

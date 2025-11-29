@@ -48,12 +48,12 @@ const HowWeWorkSection = () => {
   ];
 
   return (
-    <section id="how-we-work" className="py-20 px-6 bg-muted/30">
+    <section id="how-we-work" className="py-12 sm:py-20 px-4 sm:px-6 bg-muted/30">
       <div className="container mx-auto">
-        <h2 className="font-heading text-4xl md:text-5xl font-bold text-center mb-4 text-secondary">
+        <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-4 text-secondary break-words px-2">
           Как мы работаем
         </h2>
-        <p className="text-center text-muted-foreground mb-16 text-lg max-w-3xl mx-auto">
+        <p className="text-center text-muted-foreground mb-8 sm:mb-16 text-sm sm:text-base md:text-lg max-w-3xl mx-auto px-4 leading-relaxed">
           Работаем с корпоративными и государственными клиентами. От единичных изделий до комплексного оснащения здания.
         </p>
 

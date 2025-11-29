@@ -11,11 +11,11 @@ export const HeroSection = ({ onOrderClick }: HeroSectionProps) => (
     <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS1vcGFjaXR5PSIwLjA1IiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-40"></div>
     
     <div className="container mx-auto max-w-4xl relative z-10">
-      <h1 className="font-heading text-4xl md:text-6xl font-bold mb-6">
-        Заказать стенд в Благовещенске
+      <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight break-words">
+        Заказать стенды в Благовещенске <span className="text-primary">под ваш проект</span>
       </h1>
-      <p className="text-xl md:text-2xl mb-8 text-white/90 font-light leading-relaxed">
-        Производство информационных, навигационных стендов и табличек на заказ. Собственная производственная база, быстрые сроки, доставка по Амурской области и России. Гарантия 3 года.
+      <p className="text-lg sm:text-xl md:text-2xl mb-8 text-white/90 font-light leading-relaxed">
+        Информационные, навигационные, с подсветкой. Производство под ключ. Гарантия до 3 лет
       </p>
       <div className="flex flex-wrap gap-4 mb-8">
         <div className="flex items-center gap-2">
@@ -51,12 +51,12 @@ interface AdvantagesSectionProps {
 }
 
 export const AdvantagesSection = ({ advantages }: AdvantagesSectionProps) => (
-  <section className="py-20 px-6 bg-background">
+  <section className="py-12 sm:py-20 px-4 sm:px-6 bg-background">
     <div className="container mx-auto max-w-6xl">
-      <h2 className="font-heading text-4xl md:text-5xl font-bold text-center mb-4 text-secondary">
+      <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-4 text-secondary break-words px-2">
         Почему заказывают у нас
       </h2>
-      <p className="text-center text-muted-foreground mb-12 text-lg">
+      <p className="text-center text-muted-foreground mb-8 sm:mb-12 text-sm sm:text-base md:text-lg px-4 leading-relaxed">
         Преимущества работы с производством в Благовещенске
       </p>
 
@@ -96,12 +96,12 @@ interface StandTypesSectionProps {
 }
 
 export const StandTypesSection = ({ standTypes, onOrderClick }: StandTypesSectionProps) => (
-  <section className="py-20 px-6 bg-muted/30">
+  <section className="py-12 sm:py-20 px-4 sm:px-6 bg-muted/30">
     <div className="container mx-auto max-w-6xl">
-      <h2 className="font-heading text-4xl md:text-5xl font-bold text-center mb-4 text-secondary">
+      <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-4 text-secondary break-words px-2">
         Виды стендов на заказ
       </h2>
-      <p className="text-center text-muted-foreground mb-12 text-lg">
+      <p className="text-center text-muted-foreground mb-8 sm:mb-12 text-sm sm:text-base md:text-lg px-4 leading-relaxed">
         Изготавливаем стенды любой сложности под ваши задачи
       </p>
 
@@ -146,12 +146,12 @@ interface ProcessSectionProps {
 }
 
 export const ProcessSection = ({ process }: ProcessSectionProps) => (
-  <section className="py-20 px-6 bg-background">
+  <section className="py-12 sm:py-20 px-4 sm:px-6 bg-background">
     <div className="container mx-auto max-w-6xl">
-      <h2 className="font-heading text-4xl md:text-5xl font-bold text-center mb-4 text-secondary">
+      <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-4 text-secondary break-words px-2">
         Как заказать стенд
       </h2>
-      <p className="text-center text-muted-foreground mb-12 text-lg">
+      <p className="text-center text-muted-foreground mb-8 sm:mb-12 text-sm sm:text-base md:text-lg px-4 leading-relaxed">
         Простой процесс от заявки до установки
       </p>
 
@@ -186,12 +186,12 @@ interface FAQSectionProps {
 }
 
 export const FAQSection = ({ faq }: FAQSectionProps) => (
-  <section className="py-20 px-6 bg-muted/30">
+  <section className="py-12 sm:py-20 px-4 sm:px-6 bg-muted/30">
     <div className="container mx-auto max-w-4xl">
-      <h2 className="font-heading text-4xl md:text-5xl font-bold text-center mb-4 text-secondary">
+      <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-4 text-secondary break-words px-2">
         Частые вопросы
       </h2>
-      <p className="text-center text-muted-foreground mb-12 text-lg">
+      <p className="text-center text-muted-foreground mb-8 sm:mb-12 text-sm sm:text-base md:text-lg px-4 leading-relaxed">
         Ответы на популярные вопросы о заказе стендов в Благовещенске
       </p>
 
@@ -218,12 +218,12 @@ interface CTASectionProps {
 }
 
 export const CTASection = ({ onOrderClick }: CTASectionProps) => (
-  <section className="py-20 px-6 bg-gradient-to-br from-secondary via-secondary/95 to-primary/10 text-white">
+  <section className="py-12 sm:py-20 px-4 sm:px-6 bg-gradient-to-br from-secondary via-secondary/95 to-primary/10 text-white">
     <div className="container mx-auto max-w-4xl text-center">
-      <h2 className="font-heading text-4xl md:text-5xl font-bold mb-6">
+      <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 break-words leading-tight">
         Готовы заказать стенд?
       </h2>
-      <p className="text-xl mb-8 text-white/90">
+      <p className="text-base sm:text-lg md:text-xl mb-8 text-white/90 px-2 leading-relaxed">
         Оставьте заявку — рассчитаем стоимость и предложим лучшее решение для ваших задач
       </p>
       <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -247,10 +247,10 @@ interface SEOTextSectionProps {
 }
 
 export const SEOTextSection = ({ onOrderClick }: SEOTextSectionProps) => (
-  <section className="py-20 px-6 bg-background">
+  <section className="py-12 sm:py-20 px-4 sm:px-6 bg-background">
     <div className="container mx-auto max-w-4xl">
       <div className="prose prose-lg max-w-none text-muted-foreground">
-        <h2 className="font-heading text-3xl font-bold text-secondary mb-4">
+        <h2 className="font-heading text-xl sm:text-2xl md:text-3xl font-bold text-secondary mb-4 break-words">
           Производство стендов в Благовещенске на заказ
         </h2>
         <p className="mb-4 leading-relaxed">

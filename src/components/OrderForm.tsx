@@ -57,12 +57,12 @@ const OrderForm = () => {
   };
 
   return (
-    <section id="order" className="py-20 px-6 bg-background" aria-label="Форма заказа">
+    <section id="order" className="py-12 sm:py-20 px-4 sm:px-6 bg-background" aria-label="Форма заказа">
       <div className="container mx-auto max-w-2xl">
-        <h2 className="font-heading text-4xl md:text-5xl font-bold text-center mb-4 text-secondary">
+        <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-4 text-secondary break-words px-2">
           Оставить заявку
         </h2>
-        <p className="text-center text-muted-foreground mb-12 text-lg">
+        <p className="text-center text-muted-foreground mb-8 sm:mb-12 text-sm sm:text-base md:text-lg px-4 leading-relaxed">
           Оставьте заявку, и мы свяжемся с вами в течение рабочего дня
         </p>
         

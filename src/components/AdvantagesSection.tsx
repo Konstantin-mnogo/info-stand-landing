@@ -25,9 +25,9 @@ const AdvantagesSection = () => {
   ];
 
   return (
-    <section id="advantages" className="py-20 px-6 bg-muted/30" aria-label="Наши преимущества">
+    <section id="advantages" className="py-12 sm:py-20 px-4 sm:px-6 bg-muted/30" aria-label="Наши преимущества">
       <div className="container mx-auto">
-        <h2 className="font-heading text-4xl md:text-5xl font-bold text-center mb-16 text-secondary">
+        <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-8 sm:mb-16 text-secondary break-words px-2">
           Почему выбирают нас
         </h2>
         

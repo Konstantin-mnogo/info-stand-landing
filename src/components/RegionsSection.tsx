@@ -31,12 +31,12 @@ const RegionsSection = () => {
   ];
 
   return (
-    <section className="py-20 px-6 bg-muted/30" aria-label="География работы">
+    <section className="py-12 sm:py-20 px-4 sm:px-6 bg-muted/30" aria-label="География работы">
       <div className="container mx-auto max-w-6xl">
-        <h2 className="font-heading text-4xl md:text-5xl font-bold text-center mb-4 text-secondary">
+        <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-4 text-secondary break-words px-2">
           География работы
         </h2>
-        <p className="text-center text-muted-foreground mb-12 text-lg max-w-3xl mx-auto">
+        <p className="text-center text-muted-foreground mb-8 sm:mb-12 text-sm sm:text-base md:text-lg max-w-3xl mx-auto px-4 leading-relaxed">
           Производство в Благовещенске. Доставка по Амурской области, ДВФО и России
         </p>
 

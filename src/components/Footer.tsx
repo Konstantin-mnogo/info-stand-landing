@@ -17,7 +17,7 @@ const Footer = () => {
               </p>
               
               <p className="text-sm text-white/60 mb-2">Мессенджеры</p>
-              <div className="flex items-center justify-center gap-6">
+              <div className="flex items-center justify-center gap-4 md:gap-6 flex-wrap">
                 <a href="https://wa.me/79965269483" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-primary transition-colors">
                   <Icon name="MessageCircle" size={20} />
                   <span>WhatsApp</span>
