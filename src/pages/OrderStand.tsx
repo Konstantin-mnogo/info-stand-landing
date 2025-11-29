@@ -39,7 +39,7 @@ const OrderStand = () => {
       <ProcessSection process={process} />
       <FAQSection faq={faq} />
       <CTASection onOrderClick={() => openOrderModal('Заказать стенд в Благовещенске')} />
-      <SEOTextSection />
+      <SEOTextSection onOrderClick={openOrderModal} />
 
       <Footer />
       

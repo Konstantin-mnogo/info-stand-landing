@@ -242,7 +242,11 @@ export const CTASection = ({ onOrderClick }: CTASectionProps) => (
   </section>
 );
 
-export const SEOTextSection = () => (
+interface SEOTextSectionProps {
+  onOrderClick: (productName: string) => void;
+}
+
+export const SEOTextSection = ({ onOrderClick }: SEOTextSectionProps) => (
   <section className="py-20 px-6 bg-background">
     <div className="container mx-auto max-w-4xl">
       <div className="prose prose-lg max-w-none text-muted-foreground">
@@ -316,12 +320,7 @@ export const SEOTextSection = () => (
           <Button 
             size="lg" 
             className="bg-primary hover:bg-primary/90 text-white px-8 py-4"
-            onClick={() => {
-              const orderSection = document.getElementById('order');
-              if (orderSection) {
-                orderSection.scrollIntoView({ behavior: 'smooth' });
-              }
-            }}
+            onClick={() => onOrderClick('Заказать стенд в Благовещенске')}
           >
             Заказать стенд
           </Button>
