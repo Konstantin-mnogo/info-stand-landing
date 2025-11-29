@@ -117,9 +117,10 @@ const PriceCalculator = () => {
       }
     });
 
-    const columns = Math.ceil(Math.sqrt(allPockets.length));
-    const spacing = 5;
-
+    // Рассчитываем сетку карманов для корректного отображения
+    const pocketsPerRow = allPockets.length <= 2 ? allPockets.length : 2;
+    const pocketAreaWidth = previewWidth * 0.85; // 85% от ширины стенда для карманов
+    
     const baseFontSize = Math.min(previewWidth / 10, previewHeight / 8);
 
     return (
@@ -147,26 +148,42 @@ const PriceCalculator = () => {
           </div>
         </div>
 
-        <div className="absolute bottom-0 left-0 right-0 p-4 flex flex-wrap justify-center items-end gap-2">
-          {allPockets.map((pocket, index) => {
-            const pocketWidth = pocket.width * scale;
-            const pocketHeight = pocket.height * scale;
-            
-            return (
-              <div
-                key={index}
-                className="border-2 border-primary/40 bg-white/60 flex items-center justify-center text-xs font-medium text-muted-foreground"
-                style={{
-                  width: `${pocketWidth}px`,
-                  height: `${pocketHeight}px`,
-                  minWidth: '30px',
-                  minHeight: '40px'
-                }}
-              >
-                {pocket.size.toUpperCase()}
-              </div>
-            );
-          })}
+        <div className="absolute bottom-0 left-0 right-0 p-2 sm:p-4">
+          <div 
+            className="grid gap-1 sm:gap-2 justify-items-center items-end mx-auto"
+            style={{
+              gridTemplateColumns: `repeat(${pocketsPerRow}, minmax(0, 1fr))`,
+              maxWidth: `${pocketAreaWidth}px`
+            }}
+          >
+            {allPockets.map((pocket, index) => {
+              // Масштабируем карманы с учетом доступного места
+              let pocketWidth = pocket.width * scale * 0.9;
+              let pocketHeight = pocket.height * scale * 0.9;
+              
+              // Дополнительное уменьшение для мобильных если карманов много
+              if (isMobile && allPockets.length > 2) {
+                pocketWidth *= 0.75;
+                pocketHeight *= 0.75;
+              }
+              
+              return (
+                <div
+                  key={index}
+                  className="border-2 border-primary/40 bg-white/60 flex items-center justify-center text-xs font-medium text-muted-foreground"
+                  style={{
+                    width: `${pocketWidth}px`,
+                    height: `${pocketHeight}px`,
+                    minWidth: '25px',
+                    minHeight: '35px',
+                    maxWidth: '100%'
+                  }}
+                >
+                  <span className="text-[0.6rem] sm:text-xs">{pocket.size.toUpperCase()}</span>
+                </div>
+              );
+            })}
+          </div>
         </div>
 
         <div className="absolute top-2 right-2 bg-white/90 px-2 py-1 text-xs font-medium text-muted-foreground">
