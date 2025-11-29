@@ -154,7 +154,7 @@ const OrderForm = ({
         </div>
       )}
       
-      <div className={`flex items-start gap-${mode === 'section' ? '3' : '2'} ${mode === 'section' ? 'p-4' : 'p-3'} bg-muted/30 rounded-lg`}>
+      <div className={`flex items-start ${mode === 'section' ? 'gap-3 p-4' : 'gap-2 p-3'} bg-muted/30 rounded-lg`}>
         <Checkbox 
           id={mode === 'section' ? 'consent' : 'modal-consent'} 
           checked={consentChecked}
