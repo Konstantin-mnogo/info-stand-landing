@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import ProductOrderModal from '@/components/ProductOrderModal';
+import OrderForm from '@/components/OrderForm';
 import { useSchemaOrg } from '@/hooks/useSchemaOrg';
 import { advantages, standTypes, process, faq } from '@/data/orderStandData';
 import {
@@ -43,10 +43,12 @@ const OrderStand = () => {
 
       <Footer />
       
-      <ProductOrderModal 
+      <OrderForm 
+        mode="modal"
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         productName={selectedProduct}
+        subject={`Запрос цены: ${selectedProduct}`}
       />
     </div>
   );
