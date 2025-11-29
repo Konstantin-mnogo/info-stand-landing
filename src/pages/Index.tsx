@@ -15,9 +15,11 @@ const Index = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isOrderModalOpen, setIsOrderModalOpen] = useState(false);
   const [orderSubject, setOrderSubject] = useState('');
+  const [modalTitle, setModalTitle] = useState('');
 
-  const openOrderModal = (subject: string) => {
+  const openOrderModal = (subject: string, title: string) => {
     setOrderSubject(subject);
+    setModalTitle(title);
     setIsOrderModalOpen(true);
   };
 
@@ -47,11 +49,11 @@ const Index = () => {
         </div>
       </div>
       
-      <Header mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} onOrderClick={() => openOrderModal('Заказ стенда')} />
-      <HeroSection onOrderClick={() => openOrderModal('Заказ стенда с главной страницы')} />
+      <Header mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} onOrderClick={() => openOrderModal('Заказ стенда', 'Заказать стенд')} />
+      <HeroSection onOrderClick={() => openOrderModal('Заказ стенда с главной страницы', 'Оставить заявку')} />
       <ProductsSection />
       <AdvantagesSection />
-      <HowWeWorkSection onOrderClick={() => openOrderModal('Консультация по работе с нами')} />
+      <HowWeWorkSection onOrderClick={() => openOrderModal('Консультация по работе с нами', 'Получить консультацию')} />
       <RegionsSection />
       <PriceCalculator />
       <OrderForm />
@@ -60,6 +62,7 @@ const Index = () => {
         isOpen={isOrderModalOpen}
         onClose={() => setIsOrderModalOpen(false)}
         subject={orderSubject}
+        modalTitle={modalTitle}
       />
       <Footer />
       <CookieBanner />

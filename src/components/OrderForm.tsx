@@ -13,6 +13,7 @@ interface OrderFormProps {
   onClose?: () => void;
   productName?: string;
   subject?: string;
+  modalTitle?: string;
 }
 
 const OrderForm = ({ 
@@ -20,7 +21,8 @@ const OrderForm = ({
   isOpen = false, 
   onClose, 
   productName,
-  subject 
+  subject,
+  modalTitle 
 }: OrderFormProps) => {
   const [formData, setFormData] = useState({
     name: '',
@@ -185,7 +187,7 @@ const OrderForm = ({
       <Dialog open={isOpen} onOpenChange={onClose}>
         <DialogContent className="sm:max-w-md">
           <DialogHeader>
-            <DialogTitle className="text-2xl text-secondary">Узнать цену</DialogTitle>
+            <DialogTitle className="text-2xl text-secondary">{modalTitle || 'Узнать цену'}</DialogTitle>
             {productName && (
               <DialogDescription>
                 {productName}
