@@ -224,7 +224,7 @@ const PriceCalculator = () => {
           Калькулятор стоимости
         </h2>
         <p className="text-center text-muted-foreground mb-8 sm:mb-12 text-sm sm:text-base md:text-lg px-4 leading-relaxed">
-          Рассчитайте примерную стоимость без учета макета и монтажа
+          Рассчитайте примерную стоимость без учета разработки макета, доставки и монтажа
         </p>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
@@ -408,7 +408,7 @@ const PriceCalculator = () => {
                 <span className="text-primary">{totalPrice.toLocaleString('ru-RU')} ₽<sup className="text-base sm:text-lg">*</sup></span>
               </div>
               <p className="text-xs sm:text-sm text-muted-foreground mb-4 text-center">
-                * Стоимость без учета макета, монтажа и других доп. услуг. Менеджер уточнит все требования и особенности заказа.
+                * Базовая стоимость без учета разработки макета, доставки и монтажа. Финальная цена рассчитывается индивидуально после консультации с менеджером.
               </p>
               <Button 
                 className="w-full text-sm sm:text-base" 
