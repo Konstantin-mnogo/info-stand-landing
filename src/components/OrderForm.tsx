@@ -185,7 +185,7 @@ const OrderForm = ({
   if (mode === 'modal') {
     return (
       <Dialog open={isOpen} onOpenChange={onClose}>
-        <DialogContent className="sm:max-w-md">
+        <DialogContent className="sm:max-w-md max-h-[90vh] overflow-y-auto">
           <DialogHeader>
             <DialogTitle className="text-2xl text-secondary">{modalTitle || 'Узнать цену'}</DialogTitle>
             {productName && (
