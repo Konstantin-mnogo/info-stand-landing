@@ -97,7 +97,7 @@ const ProductsSection = () => {
       id: 3,
       title: 'Стенды с подсветкой',
       description: 'Современные стенды со встроенной LED-подсветкой для максимальной видимости.',
-      image: 'https://cdn.poehali.dev/files/aa4654eb-a164-464c-b6a0-52cd339cf009.jpg',
+      image: 'https://cdn.poehali.dev/files/7eba80d1-3c41-41f8-bdbf-a0e1d0979032.JPG',
       fullDescription: {
         intro: 'Подсветка делает витрину заметнее, выделяет главное и привлекает покупателей.',
         tasks: [
