@@ -10,6 +10,7 @@ import PriceCalculator from '@/components/PriceCalculator';
 import OrderForm from '@/components/OrderForm';
 import Footer from '@/components/Footer';
 import CookieBanner from '@/components/CookieBanner';
+import StructuredData from '@/components/StructuredData';
 
 const Index = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -34,6 +35,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
+      <StructuredData />
       <div className="fixed bottom-6 right-6 z-50 group">
         <a 
           href="tel:+74162227803"
