@@ -352,7 +352,7 @@ const ProductsSection = () => {
 
       <Dialog open={isDetailsOpen} onOpenChange={setIsDetailsOpen}>
         <DialogContent 
-          className="max-w-4xl max-h-[90vh] overflow-y-auto"
+          className="max-w-4xl max-h-[85vh] overflow-y-auto m-4"
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
