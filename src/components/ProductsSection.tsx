@@ -3,7 +3,6 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import OrderForm from './OrderForm';
-import OptimizedImage from './OptimizedImage';
 
 interface Product {
   id: number;
@@ -321,11 +320,12 @@ const ProductsSection = () => {
               onClick={() => openDetails(product)}
             >
               <div className="aspect-[4/3] overflow-hidden bg-gray-100 flex items-center justify-center">
-                <OptimizedImage
+                <img
                   src={product.image}
                   alt={`${product.title} - производство в Благовещенске`}
                   className="w-full h-full object-contain"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
               <CardContent className="p-6 flex flex-col flex-grow">
