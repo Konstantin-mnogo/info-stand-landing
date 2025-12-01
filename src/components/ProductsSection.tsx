@@ -65,7 +65,7 @@ const ProductsSection = () => {
       id: 2,
       title: 'Информационные стенды',
       description: 'Модульные стенды с возможностью размещения документов и объявлений.',
-      image: 'https://cdn.poehali.dev/files/8878544e-9097-4d6e-a709-24ae6d159659.jpg',
+      image: 'https://cdn.poehali.dev/files/74af9600-7d6f-4e12-b2f9-ba0aeaa73390.JPG',
       fullDescription: {
         intro: 'Классические стенды для любой информации — от расписаний до обязательных документов. Всё аккуратно, защищено и легко обновляется.',
         tasks: [
