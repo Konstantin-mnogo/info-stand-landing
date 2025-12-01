@@ -319,13 +319,13 @@ const ProductsSection = () => {
               style={{ animationDelay: `${index * 150}ms` }}
               onClick={() => openDetails(product)}
             >
-              <div className="aspect-[4/3] overflow-hidden">
+              <div className="aspect-[4/3] overflow-hidden bg-gray-100 flex items-center justify-center">
                 <img 
                   src={product.image} 
                   alt={product.title}
                   loading="lazy"
                   decoding="async"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                 />
               </div>
               <CardContent className="p-6 flex flex-col flex-grow">
@@ -367,13 +367,13 @@ const ProductsSection = () => {
               </DialogHeader>
               
               <div className="space-y-6">
-                <div className="aspect-video w-full overflow-hidden rounded-lg">
+                <div className="aspect-video w-full overflow-hidden rounded-lg bg-gray-100 flex items-center justify-center">
                   <img
                     loading="eager"
                     decoding="async" 
                     src={selectedProduct.image} 
                     alt={selectedProduct.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain"
                   />
                 </div>
 
