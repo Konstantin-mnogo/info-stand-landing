@@ -323,6 +323,8 @@ const ProductsSection = () => {
                 <img 
                   src={product.image} 
                   alt={product.title}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -366,7 +368,9 @@ const ProductsSection = () => {
               
               <div className="space-y-6">
                 <div className="aspect-video w-full overflow-hidden rounded-lg">
-                  <img 
+                  <img
+                    loading="eager"
+                    decoding="async" 
                     src={selectedProduct.image} 
                     alt={selectedProduct.title}
                     className="w-full h-full object-cover"
