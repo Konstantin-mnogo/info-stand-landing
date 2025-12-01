@@ -368,11 +368,12 @@ const ProductsSection = () => {
               
               <div className="space-y-6">
                 <div className="aspect-video w-full overflow-hidden rounded-lg bg-gray-100 flex items-center justify-center">
-                  <OptimizedImage
+                  <img
                     src={selectedProduct.image}
                     alt={`${selectedProduct.title} - подробное фото`}
                     className="w-full h-full object-contain"
                     loading="eager"
+                    decoding="async"
                   />
                 </div>
 
