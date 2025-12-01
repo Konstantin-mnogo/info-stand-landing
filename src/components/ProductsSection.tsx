@@ -342,7 +342,7 @@ const ProductsSection = () => {
                     openOrderModal(product);
                   }}
                 >
-                  Узнать цену
+                  Получить расчёт
                 </Button>
               </CardContent>
             </Card>
@@ -452,7 +452,7 @@ const ProductsSection = () => {
                       openOrderModal(selectedProduct);
                     }}
                   >
-                    Запросить цену
+                    Оставить заявку
                   </Button>
                 </div>
               </div>

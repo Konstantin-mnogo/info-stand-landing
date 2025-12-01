@@ -144,15 +144,9 @@ const HowWeWorkSection = ({ onOrderClick }: HowWeWorkSectionProps = {}) => {
           </div>
 
           <div className="text-center pt-6 border-t border-border">
-            <p className="text-lg text-muted-foreground mb-4">
+            <p className="text-lg text-muted-foreground">
               Готовы подготовить концепцию под ваш объект и бюджет
             </p>
-            <button 
-              onClick={onOrderClick}
-              className="inline-flex items-center justify-center rounded-lg bg-primary px-8 py-3 text-white font-semibold hover:bg-primary/90 transition-colors duration-300"
-            >
-              Получить консультацию
-            </button>
           </div>
         </div>
       </div>
