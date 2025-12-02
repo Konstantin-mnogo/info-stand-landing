@@ -19,7 +19,7 @@ const HeroSection = ({ onOrderClick }: HeroSectionProps = {}) => {
               left: `${Math.random() * 100}%`,
               top: `-${Math.random() * 20}%`,
               fontSize: `${Math.random() * 10 + 10}px`,
-              animationDuration: `${Math.random() * 3 + 5}s`,
+              animationDuration: `${Math.random() * 9 + 15}s`,
               animationDelay: `${Math.random() * 5}s`,
             }}
           >
@@ -31,7 +31,7 @@ const HeroSection = ({ onOrderClick }: HeroSectionProps = {}) => {
       <div className="container mx-auto px-6 relative z-10 text-center animate-fade-in">
         {/* Новогоднее поздравление */}
         <div className="mb-6 text-yellow-300 text-2xl sm:text-3xl md:text-4xl font-bold animate-pulse">
-          🎄 С Наступающим 2025 годом! 🎄
+          🎄 С Наступающим 2026 годом! 🎄
         </div>
         
         <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-6 tracking-tight leading-tight break-words">
