@@ -1,4 +1,5 @@
 import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 import Icon from '@/components/ui/icon';
 
 interface HowWeWorkSectionProps {
@@ -144,9 +145,16 @@ const HowWeWorkSection = ({ onOrderClick }: HowWeWorkSectionProps = {}) => {
           </div>
 
           <div className="text-center pt-6 border-t border-border">
-            <p className="text-lg text-muted-foreground">
+            <p className="text-lg text-muted-foreground mb-6">
               Готовы подготовить концепцию под ваш объект и бюджет
             </p>
+            <Button 
+              size="lg"
+              onClick={onOrderClick}
+              className="bg-primary hover:bg-primary/90 text-white px-8"
+            >
+              Оставить заявку
+            </Button>
           </div>
         </div>
       </div>
