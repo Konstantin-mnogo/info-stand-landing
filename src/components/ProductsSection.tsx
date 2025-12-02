@@ -342,7 +342,7 @@ const ProductsSection = () => {
                     openOrderModal(product);
                   }}
                 >
-                  Узнать цену
+                  Получить расчёт
                 </Button>
               </CardContent>
             </Card>
@@ -452,7 +452,7 @@ const ProductsSection = () => {
                       openOrderModal(selectedProduct);
                     }}
                   >
-                    Узнать цену
+                    Получить расчёт
                   </Button>
                 </div>
               </div>
@@ -466,7 +466,8 @@ const ProductsSection = () => {
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         productName={selectedProduct?.title || ''}
-        subject={`Запрос цены: ${selectedProduct?.title || ''}`}
+        subject={`Запрос расчёта: ${selectedProduct?.title || ''}`}
+        modalTitle="Оставить заявку"
       />
     </section>
   );
