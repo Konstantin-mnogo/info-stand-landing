@@ -49,7 +49,7 @@ const Index = () => {
         </div>
       </div>
       
-      <Header mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} onOrderClick={() => openOrderModal('Заказ стенда', 'Заказать стенд')} />
+      <Header mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} onOrderClick={() => openOrderModal('Заказ стенда', 'Заказать')} />
       <HeroSection onOrderClick={() => openOrderModal('Заказ стенда с главной страницы', 'Оставить заявку')} />
       <ProductsSection />
       <AdvantagesSection />
