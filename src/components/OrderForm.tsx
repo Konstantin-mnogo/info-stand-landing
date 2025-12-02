@@ -95,7 +95,7 @@ const OrderForm = ({
         <Input 
           placeholder="Иван Иванов"
           value={formData.name}
-          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+          onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
           required
           className={mode === 'section' ? 'h-12' : 'h-10'}
         />
@@ -109,7 +109,7 @@ const OrderForm = ({
           type="email"
           placeholder="ivan@example.com"
           value={formData.email}
-          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+          onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
           required
           className={mode === 'section' ? 'h-12' : 'h-10'}
         />
@@ -123,7 +123,7 @@ const OrderForm = ({
           type="tel"
           placeholder="+7 (999) 123-45-67"
           value={formData.phone}
-          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+          onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
           required
           className={mode === 'section' ? 'h-12' : 'h-10'}
         />
@@ -136,7 +136,7 @@ const OrderForm = ({
         <Textarea 
           placeholder={mode === 'section' ? 'Расскажите о ваших требованиях к стенду...' : 'Опишите ваши пожелания...'}
           value={formData.message}
-          onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+          onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
           rows={mode === 'section' ? 5 : 3}
           required={mode === 'section'}
         />
