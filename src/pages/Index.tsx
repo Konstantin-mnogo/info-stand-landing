@@ -53,7 +53,7 @@ const Index = () => {
       <HeroSection onOrderClick={() => openOrderModal('Заказ стенда с главной страницы', 'Оставить заявку')} />
       <ProductsSection />
       <AdvantagesSection />
-      <HowWeWorkSection onOrderClick={() => openOrderModal('Консультация по работе с нами', 'Получить консультацию')} />
+      <HowWeWorkSection onOrderClick={() => openOrderModal('Консультация по работе с нами', 'Оставить заявку')} />
       <RegionsSection />
       <PriceCalculator />
       <OrderForm />
