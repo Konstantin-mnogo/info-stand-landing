@@ -86,7 +86,7 @@ const OrderForm = ({
     }
   };
 
-  const FormContent = () => (
+  const renderForm = () => (
     <form onSubmit={handleSubmit} className={mode === 'section' ? 'space-y-6' : 'space-y-4 mt-4'}>
       <div>
         <label className="block text-sm font-medium mb-2 text-secondary">
@@ -194,7 +194,7 @@ const OrderForm = ({
               </DialogDescription>
             )}
           </DialogHeader>
-          <FormContent />
+          {renderForm()}
         </DialogContent>
       </Dialog>
     );
@@ -212,7 +212,7 @@ const OrderForm = ({
         
         <Card className="shadow-xl border-none">
           <CardContent className="p-8">
-            <FormContent />
+            {renderForm()}
           </CardContent>
         </Card>
       </div>
