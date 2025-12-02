@@ -109,24 +109,24 @@ export const StandTypesSection = ({ standTypes, onOrderClick }: StandTypesSectio
         {standTypes.map((type, index) => (
           <Card 
             key={index} 
-            className={`shadow-lg hover:shadow-xl transition-all ${type.popular ? 'border-2 border-primary' : ''}`}
+            className={`shadow-lg hover:shadow-xl transition-all flex flex-col ${type.popular ? 'border-2 border-primary' : ''}`}
           >
             {type.popular && (
               <div className="bg-primary text-white text-center py-2 text-sm font-semibold">
                 Популярный выбор
               </div>
             )}
-            <CardContent className="p-6">
+            <CardContent className="p-6 flex flex-col flex-grow">
               <h3 className="font-heading text-2xl font-semibold mb-3 text-secondary">
                 {type.title}
               </h3>
-              <p className="text-muted-foreground mb-4 leading-relaxed">
+              <p className="text-muted-foreground mb-4 leading-relaxed flex-grow">
                 {type.description}
               </p>
               <div className="text-2xl font-bold text-primary mb-4">
                 {type.price}
               </div>
-              <Button className="w-full" onClick={() => onOrderClick(type.title)}>
+              <Button className="w-full mt-auto" onClick={() => onOrderClick(type.title)}>
                 Заказать
               </Button>
             </CardContent>
