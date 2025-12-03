@@ -46,14 +46,18 @@ const RegionsSection = () => {
               <Icon name="MapPin" size={28} className="text-primary" />
               <h3 className="font-heading text-2xl font-bold text-secondary">Амурская область</h3>
             </div>
-            <div className="grid grid-cols-2 gap-3">
+            <div className="flex flex-wrap gap-2">
               {regions.map((region) => (
                 <div 
                   key={region.name}
-                  className={`flex items-center gap-2 ${region.isMain ? 'text-primary font-semibold' : 'text-muted-foreground'}`}
+                  className={`flex items-center gap-2 px-3 py-2 rounded-lg ${
+                    region.isMain 
+                      ? 'bg-primary/10 text-primary font-semibold border border-primary/20' 
+                      : 'bg-muted/50 text-muted-foreground'
+                  }`}
                 >
                   <Icon name={region.isMain ? 'Factory' : 'MapPin'} size={16} />
-                  <span>{region.name}</span>
+                  <span className="text-sm whitespace-nowrap">{region.name}</span>
                 </div>
               ))}
             </div>
@@ -72,14 +76,14 @@ const RegionsSection = () => {
               <Icon name="MapPin" size={28} className="text-primary" />
               <h3 className="font-heading text-2xl font-bold text-secondary">Дальний Восток</h3>
             </div>
-            <div className="grid grid-cols-2 gap-3">
+            <div className="flex flex-wrap gap-2">
               {farEast.map((city) => (
                 <div 
                   key={city.name}
-                  className="flex items-center gap-2 text-muted-foreground"
+                  className="flex items-center gap-2 px-3 py-2 rounded-lg bg-muted/50 text-muted-foreground"
                 >
                   <Icon name="MapPin" size={16} />
-                  <span>{city.name}</span>
+                  <span className="text-sm whitespace-nowrap">{city.name}</span>
                 </div>
               ))}
             </div>
